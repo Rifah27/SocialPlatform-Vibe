@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  gap: var(--gap);
+  padding: var(--gap);
+}
+
+.feed {
+  overflow-y: auto;
+  padding: var(--gap);
+}
