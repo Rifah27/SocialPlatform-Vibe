@@ -9,9 +9,13 @@
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--accent);
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 100px;
+  width: 100px;
 }
 
 .search {
@@ -55,8 +59,8 @@
 }
 
 @media (max-width: 480px) {
-  .logo {
-    font-size: 16px;
+  .logo-img {
+    height: 30px;
   }
   .nav button {
     font-size: 14px;
