@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaHeart, FaRegHeart, FaShare, FaComment, FaSmile, FaThumbsUp, FaCommentDots } from "react-icons/fa";
 import "../styles/PostCard.css";
 
 export default function PostCard({ post }) {
@@ -8,13 +9,9 @@ export default function PostCard({ post }) {
   const [comments, setComments] = useState(post.comments || []);
   const [shared, setShared] = useState(false);
 
-  const handleLike = () => {
-    setLiked(!liked);
-  };
-
-  const handleShare = () => {
-    setShared(!shared);
-  };
+  const handleLike = () => setLiked(!liked);
+  const handleShare = () => setShared(!shared);
+  const toggleComments = () => setShowComments(!showComments);
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
@@ -30,12 +27,7 @@ export default function PostCard({ post }) {
     }
   };
 
-  const toggleComments = () => {
-    setShowComments(!showComments);
-  };
-
-  // Emojis array
-  const commentEmojis = ["😊", "👍", "💬"];
+  const commentIcons = [<FaSmile />, <FaThumbsUp />, <FaCommentDots />];
 
   return (
     <article className="post-card">
@@ -73,13 +65,13 @@ export default function PostCard({ post }) {
 
       <footer className="actions">
         <button onClick={handleLike} className={liked ? "active" : ""}>
-          {liked ? "💖 Liked" : "🤍 Like"}
+          {liked ? <FaHeart /> : <FaRegHeart />} Like
         </button>
         <button onClick={toggleComments}>
-          💬 Comments
+          <FaComment /> Comments
         </button>
         <button onClick={handleShare} className={shared ? "active" : ""}>
-          {shared ? "↗ Shared" : "↗ Share"}
+          <FaShare /> Share
         </button>
       </footer>
 
@@ -93,7 +85,9 @@ export default function PostCard({ post }) {
                   <h4>{comment.author.name}</h4>
                   <p>
                     {comment.content}{" "}
-                    {commentEmojis.slice(0, Math.floor(Math.random() * 3) + 1).join(" ")}
+                    {commentIcons.slice(0, Math.floor(Math.random() * 3) + 1).map((icon, idx) => (
+                      <span key={idx} style={{ marginLeft: "4px" }}>{icon}</span>
+                    ))}
                   </p>
                   <span>{new Date(comment.createdAt).toLocaleTimeString()}</span>
                 </div>
