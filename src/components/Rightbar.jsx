@@ -5,7 +5,7 @@ export default function Rightbar() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const contacts = [
-    { name: "Anas Ahmed", email: "anasahmed2707@gmail.com" },
+    { name: "Aryan Rai", email: "anasahmed2707@gmail.com" },
     { name: "Raunak Asgar", email: "ra1209@gmail.com" },
     { name: "Ananya Verma", email: "annu1001@gmail.com" },
     { name: "Aishwarya Vaish", email: "vaish0305@gmail.com" },
@@ -22,7 +22,6 @@ export default function Rightbar() {
   return (
     <aside className="rightbar">
       <div className="rightbar-columns">
-        {/* Left Column */}
         <div className="rightbar-column left">
           <section className="contacts-search">
             <h3><i className="fas fa-search"></i> Search Contacts</h3>
@@ -64,7 +63,7 @@ export default function Rightbar() {
               </li>
               <li>
                 <img src="https://i.pravatar.cc/150?img=7" alt="user" />
-                <span>Ayan Siddiqui</span>
+                <span>Prashant Tiwari</span>
                 <span className="status away"></span>
               </li>
               <li>
@@ -97,9 +96,7 @@ export default function Rightbar() {
           </section>
         </div>
 
-        {/* Right Column */}
         <div className="rightbar-column right">
-          {/* Right column is empty now */}
         </div>
       </div>
     </aside>
