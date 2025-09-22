@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import {
   FaUser, FaHome, FaUsers, FaCommentDots, FaBell,
   FaCamera, FaVideo, FaGamepad, FaUsersCog, FaShoppingCart,
-  FaSave, FaCog, FaSignOutAlt, FaChevronDown, FaChevronUp, FaUserCircle
+  FaSave, FaCog, FaSignOutAlt, FaChevronDown, FaChevronUp, FaUserCircle,
+  FaSmile, FaThumbsUp, FaComment
 } from "react-icons/fa";
 import "../styles/Sidebar.css";
 
@@ -30,32 +31,41 @@ export default function Sidebar() {
 
   const [chats, setChats] = useState({
     Alia: [
-      { sender: "Alia", text: "Hey! How are you?" },
-      { sender: "Me", text: "I’m good, how about you?" },
-      { sender: "Alia", text: "Doing well, thanks 😊" },
-      { sender: "Me", text: "Let’s catch up soon!" },
-      { sender: "Alia", text: "Sure! 👍" }
+      { sender: "Alia", text: "Hey! How are you?", icons: [<FaSmile />, <FaThumbsUp />] },
+      { sender: "Me", text: "I’m good, how about you?", icons: [<FaComment />] },
+      { sender: "Alia", text: "I’m great! Just finished work.", icons: [<FaSmile />] },
+      { sender: "Me", text: "Nice! Want to grab coffee later?", icons: [<FaThumbsUp />] },
+      { sender: "Alia", text: "Sure, sounds perfect!", icons: [<FaSmile />] },
+      { sender: "Me", text: "See you at 5 PM then.", icons: [] },
     ],
     Ansh: [
-      { sender: "Ansh", text: "Let’s meet tomorrow." },
-      { sender: "Me", text: "What time?" },
-      { sender: "Ansh", text: "6 PM works." },
-      { sender: "Me", text: "Perfect, see you then!" }
+      { sender: "Ansh", text: "Let’s meet tomorrow.", icons: [<FaComment />] },
+      { sender: "Me", text: "What time?", icons: [] },
+      { sender: "Ansh", text: "6 PM works.", icons: [<FaThumbsUp />] },
+      { sender: "Me", text: "Perfect, see you then!", icons: [<FaSmile />] },
+      { sender: "Ansh", text: "Don't forget to bring the documents.", icons: [] },
+      { sender: "Me", text: "Sure thing!", icons: [<FaThumbsUp />] },
     ],
     Aiza: [
-      { sender: "Aiza", text: "Did you see my new post?" },
-      { sender: "Me", text: "Yes! It’s awesome 🔥" },
-      { sender: "Aiza", text: "Thanks 😍" }
+      { sender: "Aiza", text: "Did you see my new post?", icons: [<FaThumbsUp />] },
+      { sender: "Me", text: "Yes! It’s awesome!", icons: [<FaSmile />] },
+      { sender: "Aiza", text: "Thanks ", icons: [<FaSmile />, <FaThumbsUp />] },
+      { sender: "Me", text: "Really inspired me!", icons: [<FaComment />] },
+      { sender: "Aiza", text: "Glad to hear that!", icons: [] },
     ],
     Aryan: [
-      { sender: "Aryan", text: "You missed my call 😅" },
-      { sender: "Me", text: "Sorry, was in a meeting." },
-      { sender: "Aryan", text: "No worries, call later." }
+      { sender: "Aryan", text: "You missed my call", icons: [<FaComment />] },
+      { sender: "Me", text: "Sorry, was in a meeting.", icons: [] },
+      { sender: "Aryan", text: "No worries, call later.", icons: [<FaThumbsUp />] },
+      { sender: "Me", text: "Will do!", icons: [<FaSmile />] },
+      { sender: "Aryan", text: "Cool, talk soon.", icons: [] },
     ],
     Aliza: [
-      { sender: "Aliza", text: "Long time no see!" },
-      { sender: "Me", text: "Yeah, let’s plan something." },
-      { sender: "Aliza", text: "Great idea!" }
+      { sender: "Aliza", text: "Long time no see!", icons: [<FaSmile />] },
+      { sender: "Me", text: "Yeah, let’s plan something.", icons: [] },
+      { sender: "Aliza", text: "Great idea!", icons: [<FaThumbsUp />] },
+      { sender: "Me", text: "How about dinner this weekend?", icons: [<FaComment />] },
+      { sender: "Aliza", text: "Sounds perfect!", icons: [<FaSmile />] },
     ]
   });
 
@@ -66,9 +76,13 @@ export default function Sidebar() {
   };
 
   const handleSend = () => {
-    if (chatInput.trim() === "") return;
+    if (!chatInput.trim()) return;
     const updatedChats = { ...chats };
-    updatedChats[activeChat].push({ sender: "Me", text: chatInput });
+    updatedChats[activeChat].push({
+      sender: "Me",
+      text: chatInput,
+      icons: []
+    });
     setChats(updatedChats);
     setChatInput("");
   };
@@ -164,7 +178,12 @@ export default function Sidebar() {
             <div className="chatbox-body">
               {chats[activeChat].map((msg, index) => (
                 <div key={index} className={`chat-msg ${msg.sender === "Me" ? "me" : "other"}`}>
-                  <div className="chat-bubble">{msg.text}</div>
+                  <div className="chat-bubble">
+                    {msg.text}{" "}
+                    {msg.icons && msg.icons.map((icon, idx) => (
+                      <span key={idx} style={{ marginLeft: "4px" }}>{icon}</span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
