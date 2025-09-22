@@ -4,14 +4,13 @@
   box-shadow: var(--shadow);
   padding: 20px;
   margin-bottom: 25px;
-
   width: 100%;
   max-width: 1200px;
   margin-right: auto;
   margin-left: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* ⬅️ main spacing between sections */
+  gap: 20px;
 }
 
 .post-header {
@@ -40,7 +39,6 @@
   font-size: 16px;
 }
 
-/* ---------------- Grid for multiple images ---------------- */
 .media-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -54,7 +52,6 @@
   border-radius: var(--radius);
 }
 
-/* ---------------- Tags ---------------- */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -69,14 +66,12 @@
   color: #333;
 }
 
-/* ---------------- Stats ---------------- */
 .post-stats {
   display: flex;
   gap: 18px;
   font-size: 15px;
 }
 
-/* ---------------- Actions ---------------- */
 .actions {
   display: flex;
   gap: 16px;
@@ -94,11 +89,10 @@
   font-weight: bold;
 }
 
-/* ---------------- Comments Section ---------------- */
 .comments-section {
   display: flex;
   flex-direction: column;
-  gap: 14px; /* spacing between comments */
+  gap: 14px;
 }
 
 .comments-list {
@@ -106,7 +100,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px; /* space between comment items */
+  gap: 12px;
 }
 
 .comment {
@@ -156,4 +150,74 @@
   color: white;
   cursor: pointer;
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .post-card {
+    padding: 15px;
+    gap: 15px;
+  }
+  .post-header h3 {
+    font-size: 16px;
+  }
+  .post-header span {
+    font-size: 12px;
+  }
+  .content {
+    font-size: 14px;
+  }
+  .media-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .media {
+    height: 200px;
+  }
+  .tags {
+    gap: 8px;
+  }
+  .tag {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .post-stats,
+  .actions {
+    gap: 12px;
+    font-size: 13px;
+  }
+  .actions button {
+    font-size: 13px;
+  }
+  .comments-list {
+    max-height: 200px;
+    gap: 10px;
+  }
+  .comment-content h4 {
+    font-size: 13px;
+  }
+  .comment-content p {
+    font-size: 12px;
+  }
+  .comment-content span {
+    font-size: 10px;
+  }
+  .comment-form input,
+  .comment-form button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-card {
+    padding: 12px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .comment-avatar {
+    width: 30px;
+    height: 30px;
+  }
 }
