@@ -5,6 +5,7 @@
   padding: 12px 20px;
   background: var(--card);
   box-shadow: var(--shadow);
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -15,7 +16,8 @@
 
 .search {
   flex: 1;
-  margin: 0 20px;
+  min-width: 150px;
+  margin: 10px 20px;
   padding: 6px 12px;
   border-radius: var(--radius);
   border: none;
@@ -30,4 +32,33 @@
   font-size: 18px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  .nav button {
+    font-size: 16px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 16px;
+  }
+  .nav button {
+    font-size: 14px;
+  }
 }
