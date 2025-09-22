@@ -15,3 +15,45 @@
   overflow-y: auto;
   padding: var(--gap);
 }
+
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: 200px 1fr 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .feed {
+    order: 2;
+  }
+  
+  .sidebar, .rightbar {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .layout {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .feed {
+    padding: 10px;
+    order: 2;
+  }
+  
+  .sidebar {
+    padding: 10px;
+    order: 1;
+  }
+  .rightbar {
+    padding: 10px;
+    order: 3;
+  }
+}
