@@ -5,7 +5,7 @@ import { FaHome, FaBell, FaEnvelope, FaUser } from "react-icons/fa";
 export default function Header() {
   return (
     <header className="header">
-      <div className="logo">SocialMedia</div>
+      <div className="logo">Vibe</div>
       <input className="search" placeholder="Search..." />
       <nav className="nav">
         <button>
