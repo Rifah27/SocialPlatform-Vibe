@@ -5,7 +5,6 @@ import Sidebar from "./components/Sidebar";
 import Rightbar from "./components/Rightbar";
 import PostCard from "./components/PostCard";
 
-// Import React Icons
 import { FaRocket, FaBirthdayCake, FaPaintBrush, FaFire, FaSun, FaHeart, FaGift } from "react-icons/fa";
 
 export default function App() {
