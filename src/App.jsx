@@ -14,7 +14,7 @@ import {
   FaSun, 
   FaHeart, 
   FaGift, 
-  FaHandsClap, 
+  FaRegHandPaper, 
   FaUtensils, 
   FaBookOpen, 
   FaWaveSquare, 
@@ -55,7 +55,7 @@ export default function App() {
         {
           id: "c3",
           author: { name: "Aliza", avatar: "https://i.pravatar.cc/40?img=13" },
-          content: <>This design is super clean <FaHandsClap /></>,
+          content: <>This design is super clean <FaRegHandPaper /></>,
           createdAt: "2025-09-19T13:15:00Z"
         },
         {
@@ -167,7 +167,7 @@ export default function App() {
         {
           id: "c12",
           author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
-          content: <>You should exhibit this <FaHandsClap /></>,
+          content: <>You should exhibit this <FaRegHandPaper /></>,
           createdAt: "2025-09-16T21:00:00Z"
         }
       ]
