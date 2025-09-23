@@ -21,6 +21,9 @@
   color: var(--accent);
   border-bottom: 1px solid #eee;
   padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .rightbar ul {
@@ -120,7 +123,7 @@
 
 .contacts-list {
   max-height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: none;
 }
 

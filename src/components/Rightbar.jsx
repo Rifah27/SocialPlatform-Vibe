@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSearch, FaUserFriends, FaUserPlus } from "react-icons/fa";
 import "../styles/Rightbar.css";
 
 export default function Rightbar() {
@@ -24,9 +25,9 @@ export default function Rightbar() {
       <div className="rightbar-columns">
         <div className="rightbar-column left">
           <section className="contacts-search">
-            <h3><i className="fas fa-search"></i> Search Contacts</h3>
+            <h3><FaSearch /> Search Contacts</h3>
             <div className="search-input-container">
-              <i className="fas fa-search search-icon"></i>
+              <FaSearch className="search-icon" />
               <input
                 type="text"
                 placeholder="Search contacts..."
@@ -49,7 +50,7 @@ export default function Rightbar() {
           </section>
 
           <section className="friends">
-            <h3><i className="fas fa-user-friends"></i> Friends</h3>
+            <h3><FaUserFriends /> Friends</h3>
             <ul>
               <li>
                 <img src="https://i.pravatar.cc/150?img=5" alt="user" />
@@ -75,7 +76,7 @@ export default function Rightbar() {
           </section>
 
           <section className="suggestions">
-            <h3><i className="fas fa-user-plus"></i> Suggestions</h3>
+            <h3><FaUserPlus /> Suggestions</h3>
             <ul>
               <li>
                 <img src="https://i.pravatar.cc/150?img=10" alt="user" />
