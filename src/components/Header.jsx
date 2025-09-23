@@ -1,15 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Header.css";
-import { FaHome, FaBell, FaEnvelope, FaUser } from "react-icons/fa";
-import Logo from "../assets/logo.png"; 
+import { FaHome, FaBell, FaEnvelope, FaUser, FaSearch } from "react-icons/fa";
+import Logo from "../assets/logo.png";
 
 export default function Header() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      console.log("Searching for:", searchQuery);
+      setSearchQuery("");
+    }
+  };
+
   return (
     <header className="header">
       <div className="logo">
         <img src={Logo} alt="Vibe Logo" className="logo-img" />
       </div>
-      <input className="search" placeholder="Search..." />
+
+      <form className="search-wrapper" onSubmit={handleSearch}>
+        <input
+          type="text"
+          placeholder="Search..."
+          className="search"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button type="submit" className="search-btn">
+          <FaSearch />
+        </button>
+      </form>
+
       <nav className="nav">
         <button>
           <FaHome />
