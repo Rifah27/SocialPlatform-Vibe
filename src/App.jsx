@@ -6,7 +6,20 @@ import Sidebar from "./components/Sidebar";
 import Rightbar from "./components/Rightbar";
 import PostCard from "./components/PostCard";
 
-import { FaRocket, FaBirthdayCake, FaPaintBrush, FaFire, FaSun, FaHeart, FaGift } from "react-icons/fa";
+import { 
+  FaRocket, 
+  FaBirthdayCake, 
+  FaPaintBrush, 
+  FaFire, 
+  FaSun, 
+  FaHeart, 
+  FaGift, 
+  FaHandsClap, 
+  FaUtensils, 
+  FaBookOpen, 
+  FaWaveSquare, 
+  FaPalette 
+} from "react-icons/fa";
 
 export default function App() {
   const demoPosts = [
@@ -42,13 +55,13 @@ export default function App() {
         {
           id: "c3",
           author: { name: "Aliza", avatar: "https://i.pravatar.cc/40?img=13" },
-          content: <>This design is super clean 👏</>,
+          content: <>This design is super clean <FaHandsClap /></>,
           createdAt: "2025-09-19T13:15:00Z"
         },
         {
           id: "c4",
           author: { name: "Sameer", avatar: "https://i.pravatar.cc/40?img=15" },
-          content: <>Shared it with my friends, great work 🚀</>,
+          content: <>Shared it with my friends, great work <FaRocket /></>,
           createdAt: "2025-09-19T14:05:00Z"
         }
       ]
@@ -79,13 +92,13 @@ export default function App() {
         { 
           id: "c6", 
           author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
-          content: <>That looks delicious 🤤</>, 
+          content: <>That looks delicious <FaUtensils /></>, 
           createdAt: "2025-09-18T17:20:00Z" 
         },
         {
           id: "c7",
           author: { name: "Hamza", avatar: "https://i.pravatar.cc/40?img=11" },
-          content: <>Please share the recipe 🙏</>,
+          content: <>Please share the recipe <FaBookOpen /></>,
           createdAt: "2025-09-18T18:00:00Z"
         }
       ]
@@ -111,13 +124,13 @@ export default function App() {
         {
           id: "c8",
           author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
-          content: <>This view is breathtaking 😍</>,
+          content: <>This view is breathtaking <FaHeart /></>,
           createdAt: "2025-09-17T14:30:00Z"
         },
         {
           id: "c9",
           author: { name: "Sameer", avatar: "https://i.pravatar.cc/40?img=15" },
-          content: <>Wish I was there 🌊</>,
+          content: <>Wish I was there <FaWaveSquare /></>,
           createdAt: "2025-09-17T15:00:00Z"
         }
       ]
@@ -148,13 +161,13 @@ export default function App() {
         {
           id: "c11",
           author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" },
-          content: <>The colors are stunning 🎨</>,
+          content: <>The colors are stunning <FaPalette /></>,
           createdAt: "2025-09-16T20:20:00Z"
         },
         {
           id: "c12",
           author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
-          content: <>You should exhibit this 👏</>,
+          content: <>You should exhibit this <FaHandsClap /></>,
           createdAt: "2025-09-16T21:00:00Z"
         }
       ]
