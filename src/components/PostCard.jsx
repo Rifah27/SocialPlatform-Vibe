@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import { FaHeart, FaRegHeart, FaShare, FaComment, FaSmile, FaThumbsUp, FaCommentDots } from "react-icons/fa";
 import "../styles/PostCard.css";
 
