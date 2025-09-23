@@ -2,26 +2,26 @@
   background: var(--card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 20px;
-  margin-bottom: 25px;
+  padding: 28px;
+  margin-bottom: 35px;
   width: 100%;
   max-width: 1200px;
   margin-right: auto;
   margin-left: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
 }
 
 .post-header {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .avatar {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
 }
 
@@ -37,12 +37,13 @@
 
 .content {
   font-size: 16px;
+  line-height: 1.7;
 }
 
 .media-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
 }
 
 .media {
@@ -55,12 +56,12 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .tag {
   background: #e0e0e0;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 14px;
   font-size: 14px;
   color: #333;
@@ -68,13 +69,13 @@
 
 .post-stats {
   display: flex;
-  gap: 18px;
+  gap: 20px;
   font-size: 15px;
 }
 
 .actions {
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
 .actions button {
@@ -92,7 +93,7 @@
 .comments-section {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 28px;
 }
 
 .comments-list {
@@ -100,18 +101,13 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 28px;
+  padding-right: 6px;
 }
 
 .comment {
   display: flex;
-  gap: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #ddd;
-}
-
-.comment:last-child {
-  border-bottom: none;
+  gap: 14px;
 }
 
 .comment-avatar {
@@ -160,8 +156,8 @@
 
 @media (max-width: 768px) {
   .post-card {
-    padding: 15px;
-    gap: 15px;
+    padding: 20px;
+    gap: 20px;
   }
   .post-header h3 {
     font-size: 16px;
@@ -174,13 +170,13 @@
   }
   .media-wrapper {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    gap: 12px;
   }
   .media {
     height: 200px;
   }
   .tags {
-    gap: 8px;
+    gap: 10px;
   }
   .tag {
     font-size: 12px;
@@ -188,7 +184,7 @@
   }
   .post-stats,
   .actions {
-    gap: 12px;
+    gap: 14px;
     font-size: 13px;
   }
   .actions button {
@@ -196,7 +192,7 @@
   }
   .comments-list {
     max-height: 200px;
-    gap: 14px;
+    gap: 20px;
   }
   .comment-content h4 {
     font-size: 13px;
@@ -216,7 +212,7 @@
 
 @media (max-width: 480px) {
   .post-card {
-    padding: 12px;
+    padding: 16px;
   }
   .avatar {
     width: 40px;
