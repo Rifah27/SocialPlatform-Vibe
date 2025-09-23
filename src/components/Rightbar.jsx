@@ -53,7 +53,7 @@ export default function Rightbar() {
             <ul>
               <li>
                 <img src="https://i.pravatar.cc/150?img=5" alt="user" />
-                <span>Sana Sheikh</span>
+                <span>Sana Arif</span>
                 <span className="status online"></span>
               </li>
               <li>
@@ -84,7 +84,7 @@ export default function Rightbar() {
               </li>
               <li>
                 <img src="https://i.pravatar.cc/150?img=20" alt="user" />
-                <span className="suggestion-name">Aman Tomar</span>
+                <span className="suggestion-name">Riya Tomar</span>
                 <button className="add-btn">+ Add</button>
               </li>
               <li>
