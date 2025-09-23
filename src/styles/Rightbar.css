@@ -89,12 +89,14 @@
 }
 
 .search-input-container {
+  position: relative;
+  width: 100%;
   margin-bottom: 16px;
 }
 
 .search-input {
   width: 100%;
-  padding: 8px 12px;
+  padding: 8px 12px 8px 36px;
   border: 1px solid #ddd;
   border-radius: var(--radius);
   font-size: 14px;
@@ -104,6 +106,16 @@
 .search-input:focus {
   outline: none;
   border-color: var(--accent);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 16px;
+  pointer-events: none;
 }
 
 .contacts-list {

@@ -26,7 +26,7 @@ export default function Rightbar() {
           <section className="contacts-search">
             <h3><i className="fas fa-search"></i> Search Contacts</h3>
             <div className="search-input-container">
-              <i className="fas fa-search"></i>
+              <i className="fas fa-search search-icon"></i>
               <input
                 type="text"
                 placeholder="Search contacts..."
