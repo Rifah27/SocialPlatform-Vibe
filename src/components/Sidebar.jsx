@@ -18,7 +18,7 @@ export default function Sidebar() {
 
   const messages = [
     { name: "Alia", text: "Hey! How are you?" },
-    { name: "Ansh", text: "Let’s meet tomorrow." },
+    { name: "Ansh", text: "Let's meet tomorrow." },
     { name: "Aiza", text: "Check my new post!" },
     { name: "Aryan", text: "Missed call from me" },
     { name: "Aliza", text: "Long time no see!" }
@@ -32,14 +32,14 @@ export default function Sidebar() {
   const [chats, setChats] = useState({
     Alia: [
       { sender: "Alia", text: "Hey! How are you?", icons: [<FaSmile />, <FaThumbsUp />] },
-      { sender: "Me", text: "I’m good, how about you?", icons: [<FaComment />] },
-      { sender: "Alia", text: "I’m great! Just finished work.", icons: [<FaSmile />] },
+      { sender: "Me", text: "I'm good, how about you?", icons: [<FaComment />] },
+      { sender: "Alia", text: "I'm great! Just finished work.", icons: [<FaSmile />] },
       { sender: "Me", text: "Nice! Want to grab coffee later?", icons: [<FaThumbsUp />] },
       { sender: "Alia", text: "Sure, sounds perfect!", icons: [<FaSmile />] },
       { sender: "Me", text: "See you at 5 PM then.", icons: [] },
     ],
     Ansh: [
-      { sender: "Ansh", text: "Let’s meet tomorrow.", icons: [<FaComment />] },
+      { sender: "Ansh", text: "Let's meet tomorrow.", icons: [<FaComment />] },
       { sender: "Me", text: "What time?", icons: [] },
       { sender: "Ansh", text: "6 PM works.", icons: [<FaThumbsUp />] },
       { sender: "Me", text: "Perfect, see you then!", icons: [<FaSmile />] },
@@ -48,7 +48,7 @@ export default function Sidebar() {
     ],
     Aiza: [
       { sender: "Aiza", text: "Did you see my new post?", icons: [<FaThumbsUp />] },
-      { sender: "Me", text: "Yes! It’s awesome!", icons: [<FaSmile />] },
+      { sender: "Me", text: "Yes! It's awesome!", icons: [<FaSmile />] },
       { sender: "Aiza", text: "Thanks ", icons: [<FaSmile />, <FaThumbsUp />] },
       { sender: "Me", text: "Really inspired me!", icons: [<FaComment />] },
       { sender: "Aiza", text: "Glad to hear that!", icons: [] },
@@ -62,7 +62,7 @@ export default function Sidebar() {
     ],
     Aliza: [
       { sender: "Aliza", text: "Long time no see!", icons: [<FaSmile />] },
-      { sender: "Me", text: "Yeah, let’s plan something.", icons: [] },
+      { sender: "Me", text: "Yeah, let's plan something.", icons: [] },
       { sender: "Aliza", text: "Great idea!", icons: [<FaThumbsUp />] },
       { sender: "Me", text: "How about dinner this weekend?", icons: [<FaComment />] },
       { sender: "Aliza", text: "Sounds perfect!", icons: [<FaSmile />] },
