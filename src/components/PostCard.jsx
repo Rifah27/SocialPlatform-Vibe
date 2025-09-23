@@ -5,9 +5,11 @@ import "../styles/PostCard.css";
 export default function PostCard({ post }) {
   const [liked, setLiked] = useState(false);
   const [shared, setShared] = useState(false);
+  const [showComments, setShowComments] = useState(false);
 
   const handleLike = () => setLiked(!liked);
   const handleShare = () => setShared(!shared);
+  const toggleComments = () => setShowComments(!showComments);
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString("en-US", {
@@ -57,13 +59,32 @@ export default function PostCard({ post }) {
         <button onClick={handleLike} className={liked ? "active" : ""}>
           {liked ? <FaHeart /> : <FaRegHeart />} Like
         </button>
-        <button>
+        <button onClick={toggleComments}>
           <FaComment /> Comments
         </button>
         <button onClick={handleShare} className={shared ? "active" : ""}>
           <FaShare /> Share
         </button>
       </footer>
+
+      {showComments && post.comments && (
+        <div className="comments">
+          {post.comments.map((comment) => (
+            <div key={comment.id} className="comment">
+              <img
+                className="avatar"
+                src={comment.author.avatar}
+                alt={comment.author.name}
+              />
+              <div>
+                <strong>{comment.author.name}</strong>
+                <p>{comment.content}</p>
+                <span>{formatDate(comment.createdAt)}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </article>
   );
 }

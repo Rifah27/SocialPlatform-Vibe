@@ -100,12 +100,18 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;
 }
 
 .comment {
   display: flex;
   gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.comment:last-child {
+  border-bottom: none;
 }
 
 .comment-avatar {
@@ -190,7 +196,7 @@
   }
   .comments-list {
     max-height: 200px;
-    gap: 10px;
+    gap: 14px;
   }
   .comment-content h4 {
     font-size: 13px;
