@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; 
 import "./styles/App.css";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -19,6 +19,10 @@ export default function App() {
       shares: 2,
       tags: ["#ReactJS", "#Portfolio", "#Design"],
       createdAt: "2025-09-19T10:00:00Z",
+      comments: [
+        { id: "c1", author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" }, content: "Congrats! Looks awesome 🎉", createdAt: "2025-09-19T11:00:00Z" },
+        { id: "c2", author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, content: "🔥🔥🔥", createdAt: "2025-09-19T12:30:00Z" }
+      ]
     },
     {
       id: "p2",
@@ -32,6 +36,9 @@ export default function App() {
       shares: 1,
       tags: ["#Baking", "#Foodie", "#DessertTime"],
       createdAt: "2025-09-18T16:30:00Z",
+      comments: [
+        { id: "c3", author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" }, content: "Save me a slice 🍰", createdAt: "2025-09-18T17:00:00Z" }
+      ]
     },
     {
       id: "p3",
@@ -46,6 +53,7 @@ export default function App() {
       shares: 5,
       tags: ["#BeachLife", "#SunsetLovers", "#Nature"],
       createdAt: "2025-09-17T14:00:00Z",
+      comments: []
     },
     {
       id: "p4",
@@ -59,6 +67,9 @@ export default function App() {
       shares: 3,
       tags: ["#Art", "#Creative", "#Painting"],
       createdAt: "2025-09-16T19:45:00Z",
+      comments: [
+        { id: "c4", author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, content: "Wow, this is amazing 😍", createdAt: "2025-09-16T20:00:00Z" }
+      ]
     },
   ];
 
