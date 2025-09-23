@@ -1,5 +1,6 @@
 import React from "react"; 
 import "./styles/App.css";
+
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Rightbar from "./components/Rightbar";
@@ -37,6 +38,18 @@ export default function App() {
           author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
           content: <><FaFire /> <FaFire /> <FaFire /></>, 
           createdAt: "2025-09-19T12:30:00Z" 
+        },
+        {
+          id: "c3",
+          author: { name: "Aliza", avatar: "https://i.pravatar.cc/40?img=13" },
+          content: <>This design is super clean 👏</>,
+          createdAt: "2025-09-19T13:15:00Z"
+        },
+        {
+          id: "c4",
+          author: { name: "Sameer", avatar: "https://i.pravatar.cc/40?img=15" },
+          content: <>Shared it with my friends, great work 🚀</>,
+          createdAt: "2025-09-19T14:05:00Z"
         }
       ]
     },
@@ -58,10 +71,22 @@ export default function App() {
       createdAt: "2025-09-18T16:30:00Z",
       comments: [
         { 
-          id: "c3", 
+          id: "c5", 
           author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" }, 
           content: <>Save me a slice <FaBirthdayCake /></>, 
           createdAt: "2025-09-18T17:00:00Z" 
+        },
+        { 
+          id: "c6", 
+          author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
+          content: <>That looks delicious 🤤</>, 
+          createdAt: "2025-09-18T17:20:00Z" 
+        },
+        {
+          id: "c7",
+          author: { name: "Hamza", avatar: "https://i.pravatar.cc/40?img=11" },
+          content: <>Please share the recipe 🙏</>,
+          createdAt: "2025-09-18T18:00:00Z"
         }
       ]
     },
@@ -82,7 +107,20 @@ export default function App() {
       shares: 5,
       tags: ["#BeachLife", "#SunsetLovers", "#Nature"],
       createdAt: "2025-09-17T14:00:00Z",
-      comments: []
+      comments: [
+        {
+          id: "c8",
+          author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
+          content: <>This view is breathtaking 😍</>,
+          createdAt: "2025-09-17T14:30:00Z"
+        },
+        {
+          id: "c9",
+          author: { name: "Sameer", avatar: "https://i.pravatar.cc/40?img=15" },
+          content: <>Wish I was there 🌊</>,
+          createdAt: "2025-09-17T15:00:00Z"
+        }
+      ]
     },
     {
       id: "p4",
@@ -102,13 +140,25 @@ export default function App() {
       createdAt: "2025-09-16T19:45:00Z",
       comments: [
         { 
-          id: "c4", 
+          id: "c10", 
           author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
           content: <>Wow, this is amazing <FaHeart /></>, 
           createdAt: "2025-09-16T20:00:00Z" 
+        },
+        {
+          id: "c11",
+          author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" },
+          content: <>The colors are stunning 🎨</>,
+          createdAt: "2025-09-16T20:20:00Z"
+        },
+        {
+          id: "c12",
+          author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
+          content: <>You should exhibit this 👏</>,
+          createdAt: "2025-09-16T21:00:00Z"
         }
       ]
-    },
+    }
   ];
 
   return (
