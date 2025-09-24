@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --primary-bg: #1e1e1e;
-  --secondary-bg: #2a2a2a;
-  --border-color: #333;
+  --primary-bg: rgba(30, 30, 30, 0.4);
+  --secondary-bg: rgba(42, 42, 42, 0.5);
+  --border-color: rgba(255, 255, 255, 0.2);
   --text-color: #e0e0e0;
   --label-color: #c0c0c0;
   --link-color: #007bff;
   --link-hover: #66b2ff;
   --button-hover: #0056b3;
-  --divider-color: #555;
-  --social-border: #444;
-  --social-hover: #3a3a3a;
+  --divider-color: rgba(255, 255, 255, 0.3);
+  --social-border: rgba(255, 255, 255, 0.2);
+  --social-hover: rgba(255, 255, 255, 0.15);
   --accent-color: #fff;
   --subtitle-color: #a0a0a0;
 }
@@ -26,18 +26,32 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #121212;
+  background: url("https://freedesignfile.com/upload/2016/07/Modern-black-background-vector-material.jpg") no-repeat center center/cover;
   color: var(--text-color);
+  position: relative;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
 .login-form {
-  background-color: var(--primary-bg);
-  padding: 20px 40px; 
+  position: relative;
+  z-index: 1;
+  background: var(--primary-bg);
+  padding: 20px 40px;
   border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border: 1px solid var(--border-color);
 }
 
 .login-logo {
@@ -63,7 +77,7 @@ body {
 }
 
 .form-group {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .form-group label {
@@ -126,7 +140,7 @@ body {
 
 .divider {
   text-align: center;
-  margin: 15px 0; 
+  margin: 15px 0;
   position: relative;
   font-size: 0.8rem;
   color: var(--divider-color);
@@ -153,8 +167,8 @@ body {
 .social-login {
   display: flex;
   flex-direction: column;
-  gap: 8px; 
-  margin-bottom: 15px; 
+  gap: 8px;
+  margin-bottom: 15px;
 }
 
 .social-button {
