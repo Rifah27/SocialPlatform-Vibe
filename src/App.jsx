@@ -30,57 +30,54 @@ export default function App() {
   };
 
   const demoPosts = [
-    {
-     id: "p1",
-     author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" },
-      content: (
-       <>
-          Just launched my new website! Check it out <FaRocket /> #webdev #coding
-       </>
-      ),
-      media: [
-       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop"
-      ],
-     likes: 12,
-      shares: 2,
-      tags: ["#ReactJS", "#Portfolio", "#Design"],
-      createdAt: "2025-09-19T10:00:00Z",
-      comments: [
-        { 
-          id: "c1", 
-          author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" }, 
-          content: <>Congrats! Looks awesome <FaGift /></>, 
-          createdAt: "2025-09-19T11:00:00Z" 
-        },
-        { 
-          id: "c2", 
-          author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
-          content: <><FaFire /> <FaFire /> <FaFire /></>, 
-          createdAt: "2025-09-19T12:30:00Z" 
-        },
-        {
-          id: "c3",
-          author: { name: "Aliza", avatar: "https://i.pravatar.cc/40?img=13" },
-          content: <>This design is super clean <FaRegHandPaper /></>,
-          createdAt: "2025-09-19T13:15:00Z"
-        },
-        {
-          id: "c4",
-          author: { name: "Sameer", avatar: "https://i.pravatar.cc/40?img=15" },
-          content: <>Shared it with my friends, great work <FaRocket /></>,
-          createdAt: "2025-09-19T14:05:00Z"
-        }
-      ]
-    },
-    {
-      id: "p2",
-      author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
-      content: (
-        <>
-          Just tried baking a cake <FaBirthdayCake /> and it turned out so good!
-        </>
-      ),
+ {
+ id: "p1",
+ author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" },
+ content: (
+ <>
+ Just launched my new website! Check it out <FaRocket /> #webdev #coding
+ </>
+ ),
+ media: [
+ "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+ "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop"
+  ],
+  likes: 12,
+ shares: 2,
+ tags: ["#ReactJS", "#Portfolio", "#Design"],
+ createdAt: "2025-09-19T10:00:00Z", comments: [
+ { 
+  id: "c1", 
+ author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" }, 
+ content: <>Congrats! Looks awesome <FaGift /></>, 
+createdAt: "2025-09-19T11:00:00Z" 
+ },
+ { 
+ id: "c2", 
+ author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
+ content: <><FaFire /> <FaFire /> <FaFire /></>, 
+ createdAt: "2025-09-19T12:30:00Z"  },
+ {
+  id: "c3",
+ author: { name: "Aliza", avatar: "https://i.pravatar.cc/40?img=13" },
+ content: <>This design is super clean <FaRegHandPaper /></>, createdAt: "2025-09-19T13:15:00Z"
+ },
+ {
+id: "c4",
+ author: { name: "Sameer", avatar: "https://i.pravatar.cc/40?img=15" },
+ content: <>Shared it with my friends, great work <FaRocket /></>,
+ createdAt: "2025-09-19T14:05:00Z"
+ }
+ ]
+ },
+ {
+ id: "p2",
+ author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
+ content: (
+ <>
+ Just tried baking a cake <FaBirthdayCake /> and it turned out so good!
+ </>
+),
       media: [
         "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=250&fit=crop",
         "https://sallysbakingaddiction.com/wp-content/uploads/2013/04/triple-chocolate-cake-4.jpg"

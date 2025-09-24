@@ -32,11 +32,11 @@ body {
 
 .login-form {
   background-color: var(--primary-bg);
-  padding: 20px 40px; /* Decreased top/bottom padding, increased left/right padding */
+  padding: 20px 40px; 
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   width: 100%;
-  max-width: 500px; /* Increased max-width */
+  max-width: 500px;
   box-sizing: border-box;
 }
 
@@ -57,13 +57,13 @@ body {
 
 .login-subtitle {
   text-align: center;
-  margin-bottom: 15px; /* Decreased margin */
+  margin-bottom: 15px;
   color: var(--subtitle-color);
   font-size: 0.9rem;
 }
 
 .form-group {
-  margin-bottom: 10px; /* Decreased margin */
+  margin-bottom: 10px; 
 }
 
 .form-group label {
@@ -126,7 +126,7 @@ body {
 
 .divider {
   text-align: center;
-  margin: 15px 0; /* Decreased margin */
+  margin: 15px 0; 
   position: relative;
   font-size: 0.8rem;
   color: var(--divider-color);
@@ -153,8 +153,8 @@ body {
 .social-login {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Decreased gap */
-  margin-bottom: 15px; /* Decreased margin */
+  gap: 8px; 
+  margin-bottom: 15px; 
 }
 
 .social-button {
