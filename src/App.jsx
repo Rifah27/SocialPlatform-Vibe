@@ -8,18 +8,18 @@ import PostCard from "./components/PostCard";
 import Login from "./components/Login";
 
 import { 
-  FaRocket, 
-  FaBirthdayCake, 
-  FaPaintBrush, 
-  FaFire, 
-  FaSun, 
-  FaHeart, 
-  FaGift, 
-  FaRegHandPaper, 
-  FaUtensils, 
-  FaBookOpen, 
-  FaWaveSquare, 
-  FaPalette 
+FaRocket, 
+FaBirthdayCake, 
+FaPaintBrush, 
+FaFire, 
+FaSun, 
+FaHeart, 
+FaGift, 
+FaRegHandPaper, 
+FaUtensils, 
+FaBookOpen, 
+FaWaveSquare, 
+FaPalette 
 } from "react-icons/fa";
 
 export default function App() {
@@ -29,20 +29,20 @@ export default function App() {
     setIsLoggedIn(true);
   };
 
-  const demoPosts = [
+  const demoPosts = [
     {
-      id: "p1",
-      author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" },
+     id: "p1",
+     author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" },
       content: (
-        <>
+       <>
           Just launched my new website! Check it out <FaRocket /> #webdev #coding
-        </>
+       </>
       ),
       media: [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop"
       ],
-      likes: 12,
+     likes: 12,
       shares: 2,
       tags: ["#ReactJS", "#Portfolio", "#Design"],
       createdAt: "2025-09-19T10:00:00Z",
