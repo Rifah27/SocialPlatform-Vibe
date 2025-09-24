@@ -19,7 +19,7 @@
   margin-bottom: 12px;
   font-size: 16px;
   color: var(--accent);
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--muted);
   padding-bottom: 8px;
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@
   margin: 8px 0;
   font-size: 14px;
   padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--muted);
 }
 
 .rightbar li:last-child {
@@ -60,12 +60,12 @@
   border-radius: var(--radius);
   padding: 4px 8px;
   cursor: pointer;
-  color: #000;
+  color: var(--bg);
   font-weight: 600;
 }
 
 .rightbar button:hover {
-  background: var(--accent-dark);
+  background: var(--muted);
 }
 
 .friends .status {
@@ -100,10 +100,12 @@
 .search-input {
   width: 100%;
   padding: 8px 12px 8px 36px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--muted);
   border-radius: var(--radius);
   font-size: 14px;
   box-sizing: border-box;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 .search-input:focus {
@@ -116,7 +118,7 @@
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  color: #888;
+  color: var(--muted);
   font-size: 16px;
   pointer-events: none;
 }
@@ -135,7 +137,7 @@
   display: flex;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--muted);
 }
 
 .contact-item:last-child {
@@ -146,7 +148,7 @@
   width: 60px;
   height: 60px;
   background-color: var(--accent);
-  color: white;
+  color: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,7 +171,7 @@
 
 .contact-email {
   font-size: 12px;
-  color: #777;
+  color: var(--muted);
 }
 
 .friends ul li img {
@@ -201,8 +203,8 @@
 }
 
 .add-btn {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--accent);
+  color: var(--bg);
   border: none;
   border-radius: 8px;
   padding: 6px 14px;
@@ -213,7 +215,7 @@
 }
 
 .add-btn:hover {
-  background-color: #0056b3;
+  background-color: var(--muted);
 }
 
 .rightbar-extra {
@@ -228,7 +230,7 @@
   margin-bottom: 12px;
   font-size: 16px;
   color: var(--accent);
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--muted);
   padding-bottom: 8px;
 }
 
@@ -244,7 +246,7 @@
   margin: 8px 0;
   font-size: 14px;
   padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--muted);
 }
 
 .rightbar-extra li:last-child {

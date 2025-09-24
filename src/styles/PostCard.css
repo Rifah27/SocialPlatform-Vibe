@@ -32,7 +32,7 @@
 
 .post-header span {
   font-size: 14px;
-  color: #555;
+  color: var(--muted);
 }
 
 .content {
@@ -60,11 +60,11 @@
 }
 
 .tag {
-  background: #e0e0e0;
+  background: var(--accent);
   padding: 6px 12px;
   border-radius: 14px;
   font-size: 14px;
-  color: #333;
+  color: var(--card);
 }
 
 .post-stats {
@@ -124,11 +124,12 @@
 .comment-content p {
   margin: 2px 0;
   font-size: 13px;
+  color: var(--text);
 }
 
 .comment-content span {
   font-size: 11px;
-  color: #555;
+  color: var(--muted);
 }
 
 .comment-form {
@@ -140,16 +141,18 @@
   flex: 1;
   padding: 8px 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--muted);
   font-size: 14px;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 .comment-form button {
   padding: 8px 14px;
   border-radius: 8px;
   border: none;
-  background-color: var(--primary);
-  color: white;
+  background-color: var(--accent);
+  color: var(--bg);
   cursor: pointer;
   font-size: 14px;
 }
