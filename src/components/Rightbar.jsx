@@ -13,10 +13,20 @@ export default function Rightbar() {
     { name: "Urooj Fatima", email: "fatimau0910@gmail.com" },
     { name: "Ansh Tomar", email: "tomarjatt08@gmail.com" },
     { name: "Sana Arif", email: "sana38790@gmail.com" },
-    // ADDED 3 MORE INDIAN NAMES AND EMAILS BELOW
     { name: "Priya Sharma", email: "priya.sharma@example.com" },
     { name: "Vikram Singh", email: "vikram.s123@example.com" },
     { name: "Neha Patel", email: "neha.patel.dev@example.com" }
+  ];
+
+  const friendsList = [
+    
+    { name: "Sana Arif", status: "online", img: "https://i.pravatar.cc/150?img=5" },
+    { name: "Mohd. Hassan", status: "online", img: "https://i.pravatar.cc/150?img=6" },
+    { name: "Prashant Tiwari", status: "away", img: "https://i.pravatar.cc/150?img=7" },
+    { name: "Aryan Rai", status: "offline", img: "https://i.pravatar.cc/150?img=8" },
+    { name: "Kavya Reddy", status: "online", img: "https://i.pravatar.cc/150?img=12" },
+    { name: "Rohan Kapoor", status: "away", img: "https://i.pravatar.cc/150?img=13" },
+    { name: "Deepika Menon", status: "online", img: "https://i.pravatar.cc/150?img=14" },
   ];
 
   const filteredContacts = contacts.filter(contact =>
@@ -56,26 +66,13 @@ export default function Rightbar() {
           <section className="friends">
             <h3><FaUserFriends /> Friends</h3>
             <ul>
-              <li>
-                <img src="https://i.pravatar.cc/150?img=5" alt="user" />
-                <span>Sana Arif</span>
-                <span className="status online"></span>
-              </li>
-              <li>
-                <img src="https://i.pravatar.cc/150?img=6" alt="user" />
-                <span>Mohd. Hassan</span>
-                <span className="status online"></span>
-              </li>
-              <li>
-                <img src="https://i.pravatar.cc/150?img=7" alt="user" />
-                <span>Prashant Tiwari</span>
-                <span className="status away"></span>
-              </li>
-              <li>
-                <img src="https://i.pravatar.cc/150?img=8" alt="user" />
-                <span>Aryan Rai</span>
-                <span className="status offline"></span>
-              </li>
+              {friendsList.map((friend, index) => (
+                <li key={index}>
+                  <img src={friend.img} alt={friend.name} />
+                  <span>{friend.name}</span>
+                  <span className={`status ${friend.status}`}></span>
+                </li>
+            ))}
             </ul>
           </section>
 
