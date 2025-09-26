@@ -20,7 +20,7 @@ const Login = ({ onLogin }) => {
         <p className="login-subtitle">Sign in to your account</p>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email/Phone Number</label>
             <input
               type="email"
               id="email"
