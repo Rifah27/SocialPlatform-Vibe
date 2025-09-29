@@ -65,13 +65,13 @@ body {
 
 .login-form h2 {
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   color: var(--accent-color);
 }
 
 .login-subtitle {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   color: var(--subtitle-color);
   font-size: 0.9rem;
 }
@@ -91,7 +91,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
 .forgot-password {
@@ -167,8 +167,8 @@ body {
 .social-login {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 15px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .social-button {
