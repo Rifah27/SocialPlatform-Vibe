@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../styles/Login.css";
-import logo from '../assets/logoo.png';
+import logo from '../assets/logoo.jpg';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
