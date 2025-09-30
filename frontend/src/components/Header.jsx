@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Header.css";
 import { FaHome, FaBell, FaEnvelope, FaUser, FaSearch } from "react-icons/fa";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logoo.jpg";
 
 export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
