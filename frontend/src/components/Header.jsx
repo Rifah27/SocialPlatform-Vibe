@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src={Logo} alt="Vibe Logo" className="logo-img" />
+        <img src={Logo} alt="Vibe Logo" className="logoo-img" />
       </div>
 
       <form className="search-wrapper" onSubmit={handleSearch}>
