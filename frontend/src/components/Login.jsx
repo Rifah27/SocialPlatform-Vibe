@@ -16,7 +16,7 @@ const Login = ({ onLogin }) => {
     <div className="login-container">
       <div className="login-form">
         <img src={logo} alt="Logo" className="login-logo" />
-        <h2>Connect. Share. Explore.</h2>
+        <h2>Vibe</h2>
         <p className="login-subtitle">Sign in to your account</p>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
