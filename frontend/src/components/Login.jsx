@@ -1,15 +1,32 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import "../styles/Login.css";
 import logo from '../assets/logoo.png';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login attempted with:', { email, password });
-    onLogin();
+    setError('');
+    setSuccess('');
+
+    try {
+      const res = await axios.post("http://localhost:5000/login", {
+        email,
+        password,
+      });
+
+      setSuccess(res.data.message);
+      console.log("Logged in user:", res.data.user);
+
+      if (onLogin) onLogin(res.data.user); // callback if you want to update parent state
+    } catch (err) {
+      setError(err.response?.data?.error || "Something went wrong");
+    }
   };
 
   return (
@@ -18,6 +35,7 @@ const Login = ({ onLogin }) => {
         <img src={logo} alt="Logo" className="login-logo" />
         <h2>Vibe</h2>
         <p className="login-subtitle">Sign in to your account</p>
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email/Phone Number</label>
@@ -29,6 +47,7 @@ const Login = ({ onLogin }) => {
               required
             />
           </div>
+
           <div className="form-group">
             <div className="password-header">
               <label htmlFor="password">Password</label>
@@ -42,13 +61,19 @@ const Login = ({ onLogin }) => {
               required
             />
           </div>
+
+          {error && <p className="error-message">{error}</p>}
+          {success && <p className="success-message">{success}</p>}
+
           <button type="submit" className="login-button">
             Login
           </button>
         </form>
+
         <div className="divider">
           <span>OR</span>
         </div>
+
         <div className="social-login">
           <button className="social-button google">
             <i className="fab fa-google"></i> Sign in with Google
@@ -57,6 +82,7 @@ const Login = ({ onLogin }) => {
             <i className="fab fa-github"></i> Sign in with GitHub
           </button>
         </div>
+
         <div className="signup-link">
           Don't have an account? <a href="#">Sign up</a>
         </div>
