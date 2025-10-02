@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const User = require("./models/user");
+const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
 const users = [
@@ -19,7 +20,9 @@ const users = [
         password: "password789"
     }
 ];
-
+for (let user of users) {
+    user.password = bcrypt.hashSync(user.password, 10);
+}
 async function seedUsers() {
     try {
         await mongoose.connect(process.env.MONGO_URL, {
