@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 import "../styles/Login.css";
-import logo from '../assets/logoo.png';
+import logo from "../assets/logoo.png";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = ({ onLogin }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setSuccess('');
+    setError("");
+    setSuccess("");
 
     try {
       const res = await axios.post("http://localhost:5000/login", {
@@ -23,7 +25,7 @@ const Login = ({ onLogin }) => {
       setSuccess(res.data.message);
       console.log("Logged in user:", res.data.user);
 
-      if (onLogin) onLogin(res.data.user); // callback if you want to update parent state
+      if (onLogin) onLogin(res.data.user);
     } catch (err) {
       setError(err.response?.data?.error || "Something went wrong");
     }
@@ -48,18 +50,28 @@ const Login = ({ onLogin }) => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group password-container">
             <div className="password-header">
               <label htmlFor="password">Password</label>
-              <a href="#" className="forgot-password">Forgot Password?</a>
+              <a href="#" className="forgot-password">
+                Forgot Password?
+              </a>
             </div>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <div className="password-input-wrapper">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <span
+                className="toggle-password"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
           </div>
 
           {error && <p className="error-message">{error}</p>}
@@ -84,7 +96,7 @@ const Login = ({ onLogin }) => {
         </div>
 
         <div className="signup-link">
-          Don't have an account? <a href="#">Sign up</a>
+          Don’t have an account? <a href="#">Sign up</a>
         </div>
       </div>
     </div>
