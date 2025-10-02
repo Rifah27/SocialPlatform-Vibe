@@ -23,8 +23,6 @@ const Login = ({ onLogin }) => {
       });
 
       setSuccess(res.data.message);
-      console.log("Logged in user:", res.data.user);
-
       if (onLogin) onLogin(res.data.user);
     } catch (err) {
       setError(err.response?.data?.error || "Something went wrong");
@@ -53,9 +51,7 @@ const Login = ({ onLogin }) => {
           <div className="form-group password-container">
             <div className="password-header">
               <label htmlFor="password">Password</label>
-              <a href="#" className="forgot-password">
-                Forgot Password?
-              </a>
+              <a href="#" className="forgot-password">Forgot Password?</a>
             </div>
             <div className="password-input-wrapper">
               <input
@@ -77,14 +73,10 @@ const Login = ({ onLogin }) => {
           {error && <p className="error-message">{error}</p>}
           {success && <p className="success-message">{success}</p>}
 
-          <button type="submit" className="login-button">
-            Login
-          </button>
+          <button type="submit" className="login-button">Login</button>
         </form>
 
-        <div className="divider">
-          <span>OR</span>
-        </div>
+        <div className="divider"><span>OR</span></div>
 
         <div className="social-login">
           <button className="social-button google">
