@@ -38,7 +38,7 @@ const Login = ({ onLogin }) => {
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Email/Phone Number</label>
+            <label htmlFor="email">Username/Phone Number</label>
             <input
               type="email"
               id="email"
@@ -80,7 +80,7 @@ const Login = ({ onLogin }) => {
 
         <div className="social-login">
           <button className="social-button google">
-            <i className="fab fa-google"></i> Sign in with Google
+            <i className="fab fa-google"></i> Sign in with Email
           </button>
           <button className="social-button github">
             <i className="fab fa-github"></i> Sign in with GitHub
@@ -88,7 +88,7 @@ const Login = ({ onLogin }) => {
         </div>
 
         <div className="signup-link">
-          Don’t have an account? <a href="#">Sign up</a>
+          Don't have an account? <a href="#">Sign up</a>
         </div>
       </div>
     </div>
