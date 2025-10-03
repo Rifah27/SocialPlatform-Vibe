@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --primary-bg: rgba(30, 30, 30, 0.4);
+  --primary-bg: rgba(30, 30, 30, 0.2); /* more transparent */
   --secondary-bg: rgba(42, 42, 42, 0.5);
   --border-color: rgba(255, 255, 255, 0.2);
   --text-color: #e0e0e0;
