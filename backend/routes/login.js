@@ -4,10 +4,16 @@ const bcrypt = require("bcryptjs");
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
-    const { email, password } = req.body;
+    const { username, phone, password } = req.body;
 
     try {
-        const user = await User.findOne({ email });
+        const user = await User.findOne({
+            $or: [
+                { username: username },
+                { phone: phone }
+            ]
+        });
+
         if (!user) return res.status(400).json({ error: "User not found" });
 
         const isMatch = await bcrypt.compare(password, user.password);

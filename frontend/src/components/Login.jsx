@@ -5,7 +5,7 @@ import logo from "../assets/logoo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = ({ onLogin }) => {
-  const [email, setEmail] = useState("");
+  const [identifier, setIdentifier] = useState(""); 
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -18,7 +18,7 @@ const Login = ({ onLogin }) => {
 
     try {
       const res = await axios.post("http://localhost:5000/api/login", {
-        email,
+        identifier, 
         password,
       });
 
@@ -38,12 +38,12 @@ const Login = ({ onLogin }) => {
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Username/Phone Number</label>
+            <label htmlFor="identifier">Username/Phone Number</label>
             <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              id="identifier"
+              value={identifier}
+              onChange={(e) => setIdentifier(e.target.value)}
               required
             />
           </div>

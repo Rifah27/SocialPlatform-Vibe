@@ -7,17 +7,20 @@ const users = [
     {
         username: "aliaaa_s",
         email: "aliasiddiqui2707@gmail.com",
-        password: "Incorrect@1"
+        password: "Incorrect@1",
+        phone: "8858373166"
     },
     {
         username: "jane_smith",
         email: "jane@example.com",
-        password: "password456"
+        password: "password456",
+        phone: "2345678901"
     },
     {
         username: "alice_wonder",
         email: "alice@example.com",
-        password: "password789"
+        password: "password789",
+        phone: "3456789012"
     }
 ];
 for (let user of users) {
