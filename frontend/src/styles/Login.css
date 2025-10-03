@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --primary-bg: rgba(30, 30, 30, 0.2); /* more transparent */
+  --primary-bg: rgba(30, 30, 30, 0.2); 
   --secondary-bg: rgba(42, 42, 42, 0.5);
   --border-color: rgba(255, 255, 255, 0.2);
   --text-color: #e0e0e0;
@@ -132,7 +132,6 @@ input:focus {
 
 .forgot-password {
   background: var(--link-gradient);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
   font-size: 0.8rem;
@@ -141,7 +140,6 @@ input:focus {
 
 .forgot-password:hover {
   background: var(--link-hover-gradient);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -229,7 +227,6 @@ input:focus {
 
 .signup-link a {
   background: var(--link-gradient);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
   font-weight: 600;
@@ -237,7 +234,6 @@ input:focus {
 
 .signup-link a:hover {
   background: var(--link-hover-gradient);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
