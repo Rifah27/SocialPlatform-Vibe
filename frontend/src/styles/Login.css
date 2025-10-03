@@ -6,14 +6,17 @@
   --border-color: rgba(255, 255, 255, 0.2);
   --text-color: #e0e0e0;
   --label-color: #c0c0c0;
-  --link-color: #9b59b6;       /* vibrant purple */
-  --link-hover: #b76fcf;       /* lighter purple on hover */
-  --button-hover: #7e3fa0;     /* darker purple for hover */
   --divider-color: rgba(255, 255, 255, 0.3);
   --social-border: rgba(255, 255, 255, 0.2);
   --social-hover: rgba(255, 255, 255, 0.15);
   --accent-color: #fff;
   --subtitle-color: #a0a0a0;
+
+  /* Purple gradients for main login button and links */
+  --link-gradient: linear-gradient(90deg, #9b59b6, #b76fcf);
+  --link-hover-gradient: linear-gradient(90deg, #b76fcf, #9b59b6);
+  --button-gradient: linear-gradient(90deg, #6c3483, #8e44ad); /* dark button gradient */
+  --button-hover-gradient: linear-gradient(90deg, #4b1f63, #6c3483); /* darker hover gradient */
 }
 
 body {
@@ -98,8 +101,8 @@ input {
 
 input:focus {
   outline: none;
-  border-color: var(--link-color);
-  box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.25); /* purple focus */
+  border-color: var(--link-gradient);
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.4);
 }
 
 .password-input-wrapper,
@@ -130,31 +133,36 @@ input:focus {
 }
 
 .forgot-password {
-  color: var(--link-color);
+  background: var(--link-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
   font-size: 0.8rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .forgot-password:hover {
-  color: var(--link-hover);
+  background: var(--link-hover-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .login-button {
   width: 100%;
   padding: 12px;
-  background-color: var(--link-color);
+  background: var(--button-gradient);
   color: var(--accent-color);
   border: none;
   border-radius: 6px;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .login-button:hover {
-  background-color: var(--button-hover);
+  background: var(--button-hover-gradient);
+  box-shadow: 0 4px 15px rgba(139, 69, 133, 0.5);
 }
 
 .divider {
@@ -195,7 +203,7 @@ input:focus {
   padding: 10px;
   border: 1px solid var(--social-border);
   border-radius: 6px;
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg); /* no gradient here */
   color: var(--text-color);
   font-size: 0.9rem;
   cursor: pointer;
@@ -207,7 +215,7 @@ input:focus {
 }
 
 .social-button:hover {
-  background-color: var(--social-hover);
+  background-color: var(--social-hover); /* hover effect without gradient */
   border-color: var(--divider-color);
 }
 
@@ -222,13 +230,17 @@ input:focus {
 }
 
 .signup-link a {
-  color: var(--link-color);
+  background: var(--link-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
   font-weight: 600;
 }
 
 .signup-link a:hover {
-  text-decoration: underline;
+  background: var(--link-hover-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .error-message {
