@@ -6,9 +6,9 @@
   --border-color: rgba(255, 255, 255, 0.2);
   --text-color: #e0e0e0;
   --label-color: #c0c0c0;
-  --link-color: #007bff;
-  --link-hover: #66b2ff;
-  --button-hover: #0056b3;
+  --link-color: #ff4da6;       /* soft pink */
+  --link-hover: #ff80bf;       /* lighter pink on hover */
+  --button-hover: #e60073;     /* darker pink for hover */
   --divider-color: rgba(255, 255, 255, 0.3);
   --social-border: rgba(255, 255, 255, 0.2);
   --social-hover: rgba(255, 255, 255, 0.15);
@@ -99,7 +99,7 @@ input {
 input:focus {
   outline: none;
   border-color: var(--link-color);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 3px rgba(255, 77, 166, 0.25); /* pink focus */
 }
 
 .password-input-wrapper,
