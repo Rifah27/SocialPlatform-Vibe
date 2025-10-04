@@ -132,6 +132,8 @@ input:focus {
 
 .forgot-password {
   background: var(--link-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
   font-size: 0.8rem;
@@ -140,6 +142,8 @@ input:focus {
 
 .forgot-password:hover {
   background: var(--link-hover-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -227,6 +231,8 @@ input:focus {
 
 .signup-link a {
   background: var(--link-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
   font-weight: 600;
@@ -234,6 +240,8 @@ input:focus {
 
 .signup-link a:hover {
   background: var(--link-hover-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
