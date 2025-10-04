@@ -256,3 +256,48 @@ input:focus {
   font-size: 0.85rem;
   margin: 5px 0;
 }
+@media (max-width: 600px) {
+  .login-form {
+    padding: 16px 10px;
+    max-width: 95vw;
+    border-radius: 8px;
+  }
+
+  .login-logo {
+    width: 45px;
+    margin-bottom: 10px;
+  }
+
+  .login-form h2 {
+    font-size: 1.3rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+  }
+
+  input {
+    font-size: 0.95rem;
+    padding: 9px;
+  }
+
+  .login-button,
+  .social-button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .divider {
+    font-size: 0.75rem;
+    margin: 10px 0;
+  }
+
+  .signup-link {
+    font-size: 0.75rem;
+  }
+}

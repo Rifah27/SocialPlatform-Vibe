@@ -216,6 +216,7 @@
 @media (max-width: 480px) {
   .post-card {
     padding: 16px;
+    gap: 14px;
   }
   .avatar {
     width: 40px;
@@ -224,5 +225,54 @@
   .comment-avatar {
     width: 30px;
     height: 30px;
+  }
+  .post-header h3 {
+    font-size: 14px;
+  }
+  .post-header span {
+    font-size: 10px;
+  }
+  .content {
+    font-size: 12px;
+  }
+  .media-wrapper {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .media {
+    height: 140px;
+  }
+  .tags {
+    gap: 6px;
+  }
+  .tag {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  .post-stats,
+  .actions {
+    gap: 8px;
+    font-size: 11px;
+  }
+  .actions button {
+    font-size: 11px;
+  }
+  .comments-list {
+    max-height: 120px;
+    gap: 12px;
+  }
+  .comment-content h4 {
+    font-size: 11px;
+  }
+  .comment-content p {
+    font-size: 10px;
+  }
+  .comment-content span {
+    font-size: 9px;
+  }
+  .comment-form input,
+  .comment-form button {
+    font-size: 11px;
+    padding: 4px 8px;
   }
 }
