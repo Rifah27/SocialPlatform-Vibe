@@ -17,11 +17,10 @@
   height: 50px;
   width: 70px;
 }
-
 .search-wrapper {
   position: relative;
   flex: 1;
-  min-width: 150px;
+  max-width: 100px;
   margin: 1px 15px;
 }
 
