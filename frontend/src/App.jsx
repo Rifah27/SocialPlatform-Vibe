@@ -182,18 +182,18 @@ id: "c4",
     return <Login onLogin={handleLogin} />;
   }
 
-  return (
-    <div className="app">
-      <Header />
-      <div className="layout">
-        <Sidebar />
-        <main className="feed">
-          {demoPosts.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </main>
-        <Rightbar />
-      </div>
-    </div>
-  );
+ return (
+   <div className="app">
+<Header />
+<div className="layout">
+<Sidebar />
+ <main className="feed">
+   {demoPosts.map((post) => (
+ <PostCard key={post.id} post={post} />
+   ))}
+   </main>
+   <Rightbar />
+   </div>
+ </div>
+);
 }
