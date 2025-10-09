@@ -125,17 +125,17 @@ media: [
  tags: ["#BeachLife", "#SunsetLovers", "#Nature"],
  createdAt: "2025-09-17T14:00:00Z",
  comments: [
-        {
-          id: "c8",
-          author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
-          content: <>This view is breathtaking <FaHeart /></>,
-          createdAt: "2025-09-17T14:30:00Z"
-        },
-        {
-          id: "c9",
-          author: { name: "Sameer", avatar: "https://i.pravatar.cc/40?img=15" },
-          content: <>Wish I was there <FaWaveSquare /></>,
-          createdAt: "2025-09-17T15:00:00Z"
+ {
+ id: "c8",
+ author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
+ content: <>This view is breathtaking <FaHeart /></>,
+ createdAt: "2025-09-17T14:30:00Z"
+ },
+ {
+ id: "c9",
+ author: { name: "Sameer", avatar: "https://i.pravatar.cc/40?img=15" },
+ content: <>Wish I was there <FaWaveSquare /></>,
+ createdAt: "2025-09-17T15:00:00Z"
  }
  ]
  },
