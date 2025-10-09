@@ -100,22 +100,22 @@ comments: [
  createdAt: "2025-09-18T17:20:00Z" 
 },
  {
-          id: "c7",
-          author: { name: "Hamza", avatar: "https://i.pravatar.cc/40?img=11" },
-          content: <>Please share the recipe <FaBookOpen /></>,
-          createdAt: "2025-09-18T18:00:00Z"
-        }
-      ]
-    },
-    {
-      id: "p3",
-      author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" },
-      content: (
-        <>
-          Beautiful evening <FaSun /> at the beach today!
-        </>
-      ),
-      media: [
+ id: "c7",
+ author: { name: "Hamza", avatar: "https://i.pravatar.cc/40?img=11" },
+ content: <>Please share the recipe <FaBookOpen /></>,
+ createdAt: "2025-09-18T18:00:00Z"
+ }
+ ]
+ },
+ {
+ id: "p3",
+ author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" },
+ content: (
+ <>
+ Beautiful evening <FaSun /> at the beach today!
+ </>
+ ),
+  media: [
         "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=250&fit=crop",
         "https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=400&h=250&fit=crop",
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=250&fit=crop"
