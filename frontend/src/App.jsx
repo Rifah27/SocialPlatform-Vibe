@@ -156,19 +156,19 @@ id: "c4",
       tags: ["#Art", "#Creative", "#Painting"],
       createdAt: "2025-09-16T19:45:00Z",
       comments: [
-        { 
-          id: "c10", 
-          author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
-          content: <>Wow, this is amazing <FaHeart /></>, 
-          createdAt: "2025-09-16T20:00:00Z" 
-        },
-        {
-          id: "c11",
-          author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" },
-          content: <>The colors are stunning <FaPalette /></>,
-          createdAt: "2025-09-16T20:20:00Z"
-        },
-        {
+{ 
+ id: "c10", 
+ author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
+ content: <>Wow, this is amazing <FaHeart /></>, 
+ createdAt: "2025-09-16T20:00:00Z" 
+ },
+{
+ id: "c11",
+author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" },
+content: <>The colors are stunning <FaPalette /></>,
+ createdAt: "2025-09-16T20:20:00Z"
+ },
+ {
   id: "c12",
   author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
   content: <>You should exhibit this <FaRegHandPaper /></>,
