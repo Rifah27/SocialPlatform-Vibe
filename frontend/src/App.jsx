@@ -115,16 +115,16 @@ comments: [
  Beautiful evening <FaSun /> at the beach today!
  </>
  ),
-  media: [
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=250&fit=crop",
-        "https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=400&h=250&fit=crop",
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=250&fit=crop"
-      ],
-      likes: 20,
-      shares: 5,
-      tags: ["#BeachLife", "#SunsetLovers", "#Nature"],
-      createdAt: "2025-09-17T14:00:00Z",
-      comments: [
+media: [
+ "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=250&fit=crop",
+ "https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=400&h=250&fit=crop",
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=250&fit=crop"
+ ],
+  likes: 20,
+ shares: 5,
+ tags: ["#BeachLife", "#SunsetLovers", "#Nature"],
+ createdAt: "2025-09-17T14:00:00Z",
+ comments: [
         {
           id: "c8",
           author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
@@ -136,10 +136,10 @@ comments: [
           author: { name: "Sameer", avatar: "https://i.pravatar.cc/40?img=15" },
           content: <>Wish I was there <FaWaveSquare /></>,
           createdAt: "2025-09-17T15:00:00Z"
-        }
-      ]
-    },
-    {
+ }
+ ]
+ },
+ {
  id: "p4",
  author: { name: "Aliza", avatar: "https://i.pravatar.cc/40?img=13" },
  content: (
