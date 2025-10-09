@@ -78,28 +78,28 @@ id: "c4",
  Just tried baking a cake <FaBirthdayCake /> and it turned out so good!
  </>
 ),
-      media: [
-        "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=250&fit=crop",
-        "https://sallysbakingaddiction.com/wp-content/uploads/2013/04/triple-chocolate-cake-4.jpg"
-      ],
-      likes: 8,
-      shares: 1,
-      tags: ["#Baking", "#Foodie", "#DessertTime"],
-      createdAt: "2025-09-18T16:30:00Z",
-      comments: [
-        { 
-          id: "c5", 
-          author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" }, 
-          content: <>Save me a slice <FaBirthdayCake /></>, 
-          createdAt: "2025-09-18T17:00:00Z" 
-        },
-        { 
-          id: "c6", 
-          author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
-          content: <>That looks delicious <FaUtensils /></>, 
-          createdAt: "2025-09-18T17:20:00Z" 
-        },
-        {
+media: [
+ "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=250&fit=crop",
+ "https://sallysbakingaddiction.com/wp-content/uploads/2013/04/triple-chocolate-cake-4.jpg"
+],
+likes: 8,
+shares: 1,
+tags: ["#Baking", "#Foodie", "#DessertTime"],
+createdAt: "2025-09-18T16:30:00Z",
+comments: [
+ { 
+ id: "c5", 
+ author: { name: "Rifah", avatar: "https://i.pravatar.cc/40?img=3" }, 
+ content: <>Save me a slice <FaBirthdayCake /></>, 
+ createdAt: "2025-09-18T17:00:00Z" 
+ },
+ { 
+ id: "c6", 
+ author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
+ content: <>That looks delicious <FaUtensils /></>, 
+ createdAt: "2025-09-18T17:20:00Z" 
+},
+ {
           id: "c7",
           author: { name: "Hamza", avatar: "https://i.pravatar.cc/40?img=11" },
           content: <>Please share the recipe <FaBookOpen /></>,
