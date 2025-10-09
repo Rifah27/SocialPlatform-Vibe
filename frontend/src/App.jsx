@@ -140,22 +140,22 @@ id: "c4",
       ]
     },
     {
-      id: "p4",
-      author: { name: "Aliza", avatar: "https://i.pravatar.cc/40?img=13" },
-      content: (
-        <>
-          Finished my new painting <FaPaintBrush />. What do you all think?
-        </>
-      ),
-      media: [
-        "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=250&fit=crop",
-        "https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?w=400&h=250&fit=crop"
-      ],
-      likes: 15,
-      shares: 3,
-      tags: ["#Art", "#Creative", "#Painting"],
-      createdAt: "2025-09-16T19:45:00Z",
-      comments: [
+ id: "p4",
+ author: { name: "Aliza", avatar: "https://i.pravatar.cc/40?img=13" },
+ content: (
+ <>
+ Finished my new painting <FaPaintBrush />. What do you all think?
+</>
+ ),
+ media: [
+ "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=250&fit=crop",
+ "https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?w=400&h=250&fit=crop"
+],
+likes: 15,
+shares: 3,
+tags: ["#Art", "#Creative", "#Painting"],
+createdAt: "2025-09-16T19:45:00Z",
+ comments: [
 { 
  id: "c10", 
  author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
