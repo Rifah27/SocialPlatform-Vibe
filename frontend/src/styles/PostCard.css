@@ -156,63 +156,6 @@
   cursor: pointer;
   font-size: 14px;
 }
-
-@media (max-width: 768px) {
-  .post-card {
-    padding: 20px;
-    gap: 20px;
-  }
-  .post-header h3 {
-    font-size: 16px;
-  }
-  .post-header span {
-    font-size: 12px;
-  }
-  .content {
-    font-size: 14px;
-  }
-  .media-wrapper {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
-  }
-  .media {
-    height: 200px;
-  }
-  .tags {
-    gap: 10px;
-  }
-  .tag {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
-  .post-stats,
-  .actions {
-    gap: 14px;
-    font-size: 13px;
-  }
-  .actions button {
-    font-size: 13px;
-  }
-  .comments-list {
-    max-height: 200px;
-    gap: 20px;
-  }
-  .comment-content h4 {
-    font-size: 13px;
-  }
-  .comment-content p {
-    font-size: 12px;
-  }
-  .comment-content span {
-    font-size: 10px;
-  }
-  .comment-form input,
-  .comment-form button {
-    font-size: 13px;
-    padding: 6px 10px;
-  }
-}
-
 @media (max-width: 480px) {
   .post-card {
     padding: 16px;
