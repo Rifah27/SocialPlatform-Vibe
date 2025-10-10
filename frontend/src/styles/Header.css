@@ -62,30 +62,6 @@
   font-size: 18px;
   cursor: pointer;
 }
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 10px 8px;
-  }
-
-  .logo {
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
-  .search-wrapper {
-    margin: 8px 0;
-    min-width: 100px;
-  }
-
-  .nav {
-    justify-content: center;
-    gap: 8px;
-    margin-top: 8px;
-  }
-}
-
 @media (max-width: 480px) {
   .header {
     padding: 6px 2px;
