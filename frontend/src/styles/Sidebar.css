@@ -230,31 +230,6 @@
   cursor: pointer;
   font-weight: bold;
 }
-
-@media (max-width: 1024px) {
-  .sidebar {
-    padding: 18px;
-    gap: 24px;
-  }
-  .sidebar li {
-    font-size: 1.15rem;
-    padding: 12px 10px;
-  }
-  .sidebar li .icon {
-    font-size: 1.25rem;
-  }
-  .chatbox {
-    width: 70%;
-    height: 480px;
-  }
-  .chatbox-footer input {
-    padding: 9px;
-  }
-  .chatbox-footer button {
-    padding: 9px 13px;
-  }
-}
-
 @media (max-width: 768px) {
   .sidebar {
     padding: 16px;
