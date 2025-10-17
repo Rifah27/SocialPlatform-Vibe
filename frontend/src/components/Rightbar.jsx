@@ -11,7 +11,7 @@ export default function Rightbar() {
     { name: "Ananya Verma", email: "annu1001@gmail.com" },
     { name: "Aishwarya Vaish", email: "vaish0305@gmail.com" },
     { name: "Urooj Fatima", email: "fatimau0910@gmail.com" },
-    { name: "Ansh Tomar", email: "tomarjatt08@gmail.com" },
+    { name: "Aqsa Ahmad", email: "aahmad08@gmail.com" },
     { name: "Sana Arif", email: "sana38790@gmail.com" },
     { name: "Priya Sharma", email: "priya.sharma@example.com" },
     { name: "Vikram Singh", email: "vikram.s123@example.com" },
