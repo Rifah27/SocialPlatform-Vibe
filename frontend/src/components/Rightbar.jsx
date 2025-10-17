@@ -6,7 +6,7 @@ export default function Rightbar() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const contacts = [
-    { name: "Aryan Rai", email: "raiaryan03@gmail.com" },
+    { name: "Ankur Garg", email: "ankurgg03@gmail.com" },
     { name: "Raunak Asgar", email: "ra1209@gmail.com" },
     { name: "Ananya Verma", email: "annu1001@gmail.com" },
     { name: "Aishwarya Vaish", email: "vaish0305@gmail.com" },
