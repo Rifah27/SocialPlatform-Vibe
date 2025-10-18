@@ -56,7 +56,7 @@ export default function Sidebar() {
     Aryan: [
       { sender: "Aqsa", text: "You missed my call", icons: [<FaComment />] },
       { sender: "Me", text: "Sorry, was in a meeting.", icons: [] },
-      { sender: "Aryan", text: "No worries, call later.", icons: [<FaThumbsUp />] },
+      { sender: "Aqsa", text: "No worries, call later.", icons: [<FaThumbsUp />] },
       { sender: "Me", text: "Will do!", icons: [<FaSmile />] },
       { sender: "Aryan", text: "Cool, talk soon.", icons: [] },
     ],
