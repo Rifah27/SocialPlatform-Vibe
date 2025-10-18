@@ -39,7 +39,7 @@ export default function Sidebar() {
       { sender: "Me", text: "See you at 5 PM then.", icons: [] },
     ],
     Ansh: [
-      { sender: "Ansh", text: "Let's meet tomorrow.", icons: [<FaComment />] },
+      { sender: "Eram", text: "Let's meet tomorrow.", icons: [<FaComment />] },
       { sender: "Me", text: "What time?", icons: [] },
       { sender: "Ansh", text: "6 PM works.", icons: [<FaThumbsUp />] },
       { sender: "Me", text: "Perfect, see you then!", icons: [<FaSmile />] },
