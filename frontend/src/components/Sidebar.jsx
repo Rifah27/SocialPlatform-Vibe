@@ -20,7 +20,7 @@ export default function Sidebar() {
     { name: "Alia", text: "Hey! How are you?" },
     { name: "Eram", text: "Let's meet tomorrow." },
     { name: "Aiza", text: "Check my new post!" },
-    { name: "Aryan", text: "Missed call from me" },
+    { name: "Aqsa", text: "Missed call from me" },
     { name: "Aliza", text: "Long time no see!" }
   ];
 
