@@ -54,7 +54,7 @@ export default function Sidebar() {
       { sender: "Aiza", text: "Glad to hear that!", icons: [] },
     ],
     Aryan: [
-      { sender: "Aryan", text: "You missed my call", icons: [<FaComment />] },
+      { sender: "Aqsa", text: "You missed my call", icons: [<FaComment />] },
       { sender: "Me", text: "Sorry, was in a meeting.", icons: [] },
       { sender: "Aryan", text: "No worries, call later.", icons: [<FaThumbsUp />] },
       { sender: "Me", text: "Will do!", icons: [<FaSmile />] },
