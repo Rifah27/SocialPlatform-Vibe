@@ -18,14 +18,14 @@ export default function Sidebar() {
 
   const messages = [
     { name: "Alia", text: "Hey! How are you?" },
-    { name: "Ansh", text: "Let's meet tomorrow." },
+    { name: "Eram", text: "Let's meet tomorrow." },
     { name: "Aiza", text: "Check my new post!" },
     { name: "Aryan", text: "Missed call from me" },
     { name: "Aliza", text: "Long time no see!" }
   ];
 
   const notifications = [
-    { name: "Aryan", text: "Missed call from Aryan" },
+    { name: "Aqsa", text: "Missed call from Aqsa" },
     { name: "Aiza", text: "Aiza posted a new post" }
   ];
 
