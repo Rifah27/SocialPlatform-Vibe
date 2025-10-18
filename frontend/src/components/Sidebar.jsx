@@ -43,7 +43,7 @@ export default function Sidebar() {
       { sender: "Me", text: "What time?", icons: [] },
       { sender: "Eram", text: "6 PM works.", icons: [<FaThumbsUp />] },
       { sender: "Me", text: "Perfect, see you then!", icons: [<FaSmile />] },
-      { sender: "Ansh", text: "Don't forget to bring the documents.", icons: [] },
+      { sender: "Eram", text: "Don't forget to bring the documents.", icons: [] },
       { sender: "Me", text: "Sure thing!", icons: [<FaThumbsUp />] },
     ],
     Aiza: [
