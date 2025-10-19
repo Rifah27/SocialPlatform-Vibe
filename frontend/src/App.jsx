@@ -121,7 +121,7 @@ media: [
   "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=250&fit=crop"
  ],
   likes: 20,
- shares: 5,
+ shares: 7,
  tags: ["#BeachLife", "#SunsetLovers", "#Nature"],
  createdAt: "2025-09-17T14:00:00Z",
  comments: [
