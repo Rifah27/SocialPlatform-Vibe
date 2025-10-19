@@ -42,8 +42,8 @@ export default function App() {
  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop"
   ],
-  likes: 12,
- shares: 2,
+  likes: 30,
+ shares: 5,
  tags: ["#ReactJS", "#Portfolio", "#Design"],
  createdAt: "2025-09-19T10:00:00Z", comments: [
  { 
