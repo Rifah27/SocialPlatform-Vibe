@@ -85,7 +85,7 @@ export default function Rightbar() {
               </li>
               <li>
                 <img src="https://i.pravatar.cc/150?img=20" alt="user" />
-                <span className="suggestion-name">Riya Tomar</span>
+                <span className="suggestion-name">Riya Shukla</span>
                 <button className="add-btn">+ Add</button>
               </li>
               <li>
