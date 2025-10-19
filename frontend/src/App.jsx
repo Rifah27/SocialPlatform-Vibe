@@ -82,8 +82,8 @@ media: [
  "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=250&fit=crop",
  "https://sallysbakingaddiction.com/wp-content/uploads/2013/04/triple-chocolate-cake-4.jpg"
 ],
-likes: 8,
-shares: 1,
+likes: 10,
+shares: 6,
 tags: ["#Baking", "#Foodie", "#DessertTime"],
 createdAt: "2025-09-18T16:30:00Z",
 comments: [
