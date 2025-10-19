@@ -20,9 +20,9 @@ export default function Rightbar() {
 
   const friendsList = [
     { name: "Sana Arif", status: "online", img: "https://i.pravatar.cc/150?img=5" },
-    { name: "Mohd. Hassan", status: "online", img: "https://i.pravatar.cc/150?img=6" },
+    { name: "Arif Ali", status: "online", img: "https://i.pravatar.cc/150?img=6" },
     { name: "Prashant Tiwari", status: "away", img: "https://i.pravatar.cc/150?img=7" },
-    { name: "Arif Ali", status: "offline", img: "https://i.pravatar.cc/150?img=8" },
+    { name: "Mohd. Hassan", status: "offline", img: "https://i.pravatar.cc/150?img=8" },
     { name: "Kavya Reddy", status: "online", img: "https://i.pravatar.cc/150?img=12" },
     { name: "Rohan Kapoor", status: "away", img: "https://i.pravatar.cc/150?img=13" },
     { name: "Deepika Menon", status: "online", img: "https://i.pravatar.cc/150?img=14" },
