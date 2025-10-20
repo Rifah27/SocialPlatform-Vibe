@@ -55,7 +55,7 @@ createdAt: "2025-09-19T11:00:00Z"
  { 
  id: "c2", 
  author: { name: "Aiza", avatar: "https://i.pravatar.cc/40?img=10" }, 
- content: <><FaFire /> <FaFire /> </>, 
+ content: <><FaFire /> <FaFire /> <FaFire /></>, 
  createdAt: "2025-09-19T12:30:00Z"  },
  {
   id: "c3",
