@@ -75,7 +75,7 @@ id: "c4",
  author: { name: "Alia", avatar: "https://i.pravatar.cc/40?img=7" },
  content: (
  <>
- Just tried baking a cake <FaBirthdayCake /> and it turned out so good!
+ Just tried baking a cake <FaBirthdayCake /> and it turned out so good!!
  </>
 ),
 media: [
