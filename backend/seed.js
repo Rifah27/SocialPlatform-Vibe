@@ -12,7 +12,7 @@ const users = [
     },
     {
         username: "sana_arif",
-        email: "jane@example.com",
+        email: "sana38770@gmail.com",
         password: "password456",
         phone: "2345678901"
     },
