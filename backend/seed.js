@@ -17,7 +17,7 @@ const users = [
         phone: "2345678901"
     },
     {
-        username: "alice_wonder",
+        username: "Rifah_arif",
         email: "alice@example.com",
         password: "password789",
         phone: "3456789012"
