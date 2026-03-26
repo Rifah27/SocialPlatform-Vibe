@@ -4,7 +4,7 @@ import "../styles/Login.css";
 import logo from "../assets/logoo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin, onSwitchToRegister }) => {
   const [identifier, setIdentifier] = useState(""); 
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -23,6 +23,9 @@ const Login = ({ onLogin }) => {
       });
 
       setSuccess(res.data.message);
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+      }
       if (onLogin) onLogin(res.data.user);
     } catch (err) {
       setError(err.response?.data?.error || "Something went wrong");
@@ -88,7 +91,10 @@ const Login = ({ onLogin }) => {
         </div>
 
         <div className="signup-link">
-          Don't have an account? <a href="#">Sign up</a>
+          Don't have an account?{" "}
+          <span style={{color: 'blue', cursor: 'pointer', textDecoration: 'underline'}} onClick={onSwitchToRegister}>
+            Sign up
+          </span>
         </div>
       </div>
     </div>

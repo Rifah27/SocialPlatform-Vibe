@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar";
 import Rightbar from "./components/Rightbar";
 import PostCard from "./components/PostCard";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 import { 
 FaRocket, 
@@ -24,8 +25,33 @@ FaPalette
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const [showRegister, setShowRegister] = useState(false);
 
-  const handleLogin = () => {
+  React.useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("http://localhost:5000/api/auth/me", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.user) {
+          setUser(data.user);
+          setIsLoggedIn(true);
+        } else {
+          localStorage.removeItem("token");
+        }
+      })
+      .catch((err) => {
+        console.error("Auth me error:", err);
+        localStorage.removeItem("token");
+      });
+    }
+  }, []);
+
+  const handleLogin = (userData) => {
+    setUser(userData);
     setIsLoggedIn(true);
   };
 
@@ -179,7 +205,10 @@ content: <>The colors are stunning <FaPalette /></>,
 ];
 
   if (!isLoggedIn) {
-    return <Login onLogin={handleLogin} />;
+    if (showRegister) {
+       return <Register onRegister={handleLogin} onSwitchToLogin={() => setShowRegister(false)} />;
+    }
+    return <Login onLogin={handleLogin} onSwitchToRegister={() => setShowRegister(true)} />;
   }
 
  return (
