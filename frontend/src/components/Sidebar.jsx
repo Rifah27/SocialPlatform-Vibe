@@ -70,12 +70,10 @@ export default function Sidebar({ onLogout }) {
   });
 
   const handleLogout = () => {
-    if (window.confirm("Are you sure you want to logout?")) {
-      if (onLogout) {
-        onLogout();
-      }
-      console.log("User logged out");
+    if (onLogout) {
+      onLogout();
     }
+    console.log("User logged out");
   };
 
   const handleSend = () => {
