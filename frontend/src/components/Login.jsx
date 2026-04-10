@@ -20,7 +20,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
     if (identifier === "admin" && password === "admin") {
       setSuccess("Login successful (Offline Mode)");
       localStorage.setItem("token", "dummy_token");
-      if (onLogin) onLogin({ id: "123", username: "Admin", email: "admin@vibe.com", phone: "1234567890" });
+      if (onLogin) onLogin({ id: "123", username: "Admin", email: "admin@vibera.com", phone: "1234567890" });
       return;
     }
 
@@ -44,7 +44,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
     <div className="login-container">
       <div className="login-form">
         <img src={logo} alt="Logo" className="login-logo" />
-        <h2>Vibe</h2>
+        <h2>Vibera</h2>
         <p className="login-subtitle">Sign in to your account</p>
 
         <form onSubmit={handleSubmit}>
