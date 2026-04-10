@@ -55,6 +55,12 @@ export default function App() {
     setIsLoggedIn(true);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    setUser(null);
+  };
+
   const demoPosts = [
  {
  id: "p1",
@@ -214,9 +220,9 @@ content: <>The colors are stunning <FaPalette /></>,
  return (
    <div className="app">
 <Header />
-<div className="layout">
-<Sidebar />
- <main className="feed">
+ <div className="layout">
+<Sidebar onLogout={handleLogout} />
+  <main className="feed">
    {demoPosts.map((post) => (
  <PostCard key={post.id} post={post} />
    ))}

@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import "../styles/Sidebar.css";
 
-export default function Sidebar() {
+export default function Sidebar({ onLogout }) {
   const [showFriends, setShowFriends] = useState(false);
   const [showMessages, setShowMessages] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
@@ -71,6 +71,9 @@ export default function Sidebar() {
 
   const handleLogout = () => {
     if (window.confirm("Are you sure you want to logout?")) {
+      if (onLogout) {
+        onLogout();
+      }
       console.log("User logged out");
     }
   };
