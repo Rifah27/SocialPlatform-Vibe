@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
-import logo from "../assets/logoo.png";
+import logo from "../assets/vibera_logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = ({ onLogin, onSwitchToRegister }) => {
