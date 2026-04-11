@@ -30,7 +30,6 @@
   display: none;
 }
 
-/* Large Tablet Responsiveness */
 @media (max-width: 1024px) {
   .layout {
     grid-template-columns: 240px minmax(380px, 1fr);
