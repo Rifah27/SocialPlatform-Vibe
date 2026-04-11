@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
 import logo from "../assets/vibera_logo.png";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaUserAlt, FaLock, FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = ({ onLogin, onSwitchToRegister }) => {
   const [identifier, setIdentifier] = useState(""); 
@@ -49,14 +50,18 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="identifier">Username/Phone Number</label>
-            <input
-              type="text"
-              id="identifier"
-              value={identifier}
-              onChange={(e) => setIdentifier(e.target.value)}
-              required
-            />
+            <label htmlFor="identifier">Username / Phone Number</label>
+            <div className="input-wrapper">
+              <FaUserAlt className="input-icon" />
+              <input
+                type="text"
+                id="identifier"
+                value={identifier}
+                onChange={(e) => setIdentifier(e.target.value)}
+                placeholder="Enter your details"
+                required
+              />
+            </div>
           </div>
 
           <div className="form-group password-container">
@@ -64,12 +69,14 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
               <label htmlFor="password">Password</label>
               <a href="#" className="forgot-password">Forgot Password?</a>
             </div>
-            <div className="password-input-wrapper">
+            <div className="password-input-wrapper input-wrapper">
+              <FaLock className="input-icon" />
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
                 required
               />
               <span
@@ -79,6 +86,11 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
+          </div>
+
+          <div className="remember-me">
+            <input type="checkbox" id="remember" />
+            <label htmlFor="remember">Remember me for 30 days</label>
           </div>
 
           {error && <p className="error-message">{error}</p>}
@@ -91,18 +103,18 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
 
         <div className="social-login">
           <button className="social-button google">
-            <i className="fab fa-google"></i> Sign in with Email
+            <FcGoogle className="social-icon" /> Continue with Google
           </button>
           <button className="social-button github">
-            <i className="fab fa-github"></i> Sign in with GitHub
+            <FaGithub className="social-icon" /> Continue with GitHub
           </button>
         </div>
 
         <div className="signup-link">
           Don't have an account?{" "}
-          <span style={{color: 'blue', cursor: 'pointer', textDecoration: 'underline'}} onClick={onSwitchToRegister}>
+          <a onClick={(e) => { e.preventDefault(); onSwitchToRegister(); }} href="#">
             Sign up
-          </span>
+          </a>
         </div>
       </div>
     </div>
