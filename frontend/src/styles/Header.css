@@ -53,7 +53,7 @@
 }
 .search:focus {
   outline: none;
-  background: #fff;
+  background: #ffffff;
   border-color: var(--card-border);
   box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.1);
 }
