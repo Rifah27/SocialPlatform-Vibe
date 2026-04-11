@@ -5,7 +5,6 @@
   background-color: var(--bg);
 }
 
-/* Elegant Bento Layout */
 .layout {
   display: grid;
   grid-template-columns: 260px minmax(400px, 1fr) 280px;
