@@ -16,6 +16,7 @@
   overflow-y: auto;
   scrollbar-width: none;
 }
+
 .rightbar::-webkit-scrollbar {
   display: none;
 }
@@ -31,7 +32,7 @@
   letter-spacing: 1px;
   font-weight: 700;
   color: var(--text-muted);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-bottom: 8px;
   display: flex;
   align-items: center;
@@ -53,8 +54,9 @@
   border-radius: var(--radius-sm);
   transition: var(--transition);
 }
+
 .rightbar li:hover {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   transform: translateX(4px);
 }
 
@@ -71,7 +73,7 @@
 }
 
 .rightbar button {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-full);
   padding: 6px 12px;
@@ -81,6 +83,7 @@
   font-size: 12px;
   transition: var(--transition);
 }
+
 .rightbar button:hover {
   background: var(--gradient-primary);
   color: #fff;
@@ -93,11 +96,22 @@
   height: 10px;
   border-radius: 50%;
   margin-left: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
-.friends .status.online { background: #4BB543; box-shadow: 0 0 10px rgba(75, 181, 67, 0.5); }
-.friends .status.away { background: #FFC107; box-shadow: 0 0 10px rgba(255, 193, 7, 0.5); }
-.friends .status.offline { background: #9E9E9E; }
+
+.friends .status.online {
+  background: #4BB543;
+  box-shadow: 0 0 10px rgba(75, 181, 67, 0.5);
+}
+
+.friends .status.away {
+  background: #FFC107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+.friends .status.offline {
+  background: #9E9E9E;
+}
 
 .contacts-search h3 {
   margin-bottom: 16px;
@@ -116,15 +130,16 @@
   border-radius: var(--radius-full);
   font-size: 13px;
   box-sizing: border-box;
-  background-color: rgba(255,255,255,0.03);
+  background-color: rgba(255, 255, 255, 0.03);
   color: var(--text-main);
   transition: var(--transition);
   font-family: inherit;
 }
+
 .search-input:focus {
   outline: none;
   border-color: var(--accent);
-  background-color: rgba(255,255,255,0.08);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .search-icon {
@@ -151,8 +166,9 @@
   transition: var(--transition);
   cursor: pointer;
 }
+
 .contact-item:hover {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .contact-avatar {
@@ -200,7 +216,7 @@
   align-items: center;
   margin-bottom: 20px;
   padding: 16px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
 }
@@ -231,13 +247,14 @@
   font-weight: 600;
   transition: var(--transition);
 }
+
 .add-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
 }
 
 .rightbar-extra {
-  background: rgba(255,255,255,0.02);
+  background: rgba(255, 255, 255, 0.02);
   border-radius: var(--radius-md);
   padding: 16px;
   margin-top: auto;
@@ -248,7 +265,7 @@
   margin-bottom: 12px;
   font-size: 13px;
   color: var(--text-muted);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-bottom: 8px;
 }
 
@@ -269,7 +286,8 @@
   color: var(--text-muted);
   cursor: pointer;
 }
+
 .rightbar-extra li:hover {
   color: var(--text-main);
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
 }

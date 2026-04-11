@@ -1,38 +1,37 @@
 :root {
-  /* Rich Dark Space Theme */
-  --bg: #0d0614;
-  --bg-gradient: radial-gradient(circle at top right, #2d1844, #0d0614);
+  /* Vibrant Colorful Light Theme */
+  --bg: #fce7f3; 
+  --bg-gradient: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
   
-  /* Glassmorphism Cards */
-  --card-bg: rgba(30, 20, 44, 0.45);
-  --card-border: rgba(255, 255, 255, 0.08);
+  /* Frosted Glass Cards for Vibrant Backgrounds */
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(255, 255, 255, 0.6);
   
-  /* Text and Accents */
-  --text-main: #ffffff;
-  --text-muted: #a291b5;
-  --accent: #ff4b2b;
-  --accent-secondary: #ff416c;
+  /* Deep Royal Text and Accents */
+  --text-main: #1e1b4b;
+  --text-muted: #4338ca;
+  --accent: #e11d48; 
+  --accent-secondary: #9333ea;
   
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-  --gradient-hover: linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
-  
-  /* Details */
+  /* Energetic Gradients */
+  --gradient-primary: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+  --gradient-hover: linear-gradient(135deg, #ffb199 0%, #ff0844 100%);
+
+  /* Refined Details */
   --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
   --radius-full: 9999px;
-  --gap-sm: 10px;
-  --gap-md: 20px;
-  --gap-lg: 30px;
-  
-  /* Shadows */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 20px rgba(255, 75, 43, 0.3);
-  --blur-md: blur(16px);
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --gap-sm: 12px;
+  --gap-md: 24px;
+  --gap-lg: 32px;
+
+  /* Soft Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 4px 15px rgba(244, 63, 94, 0.25);
+  --blur-md: none;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -54,14 +53,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base Glass Class for reuse */
+/* Base Bento Class for reuse */
 .glass-panel {
   background: var(--card-bg);
-  backdrop-filter: var(--blur-md);
-  -webkit-backdrop-filter: var(--blur-md);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Custom Scrollbar */
@@ -69,13 +68,16 @@ body {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.1);
+  background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.1);
+  background: #cbd5e1;
   border-radius: var(--radius-full);
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255,255,255,0.2);
+  background: #94a3b8;
 }

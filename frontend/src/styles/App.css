@@ -1,43 +1,43 @@
 .app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: hidden; /* Prevent scrolling on app level */
+  min-height: 100vh;
+  background-color: var(--bg);
 }
 
-/* Responsive Grid Layout */
+/* Elegant Bento Layout */
 .layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr) 300px;
+  grid-template-columns: 260px minmax(400px, 1fr) 280px;
   gap: var(--gap-lg);
-  padding: 0 var(--gap-lg) var(--gap-lg);
-  max-width: 1400px;
+  padding: 0 var(--gap-lg);
+  max-width: 1250px;
   margin: 0 auto;
   width: 100%;
-  height: calc(100vh - 80px); /* Subtract header height */
-  margin-top: 80px; /* Space for the fixed sticky header */
+  margin-top: calc(85px + var(--gap-md)); /* Space under header */
+  align-items: start; /* Allows columns to have separate heights */
 }
 
 /* Feed Column */
 .feed {
-  overflow-y: auto;
-  padding-right: 4px; /* Space for scrollbar */
-  padding-bottom: 80px; /* Space for mobile nav if applicable */
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
-  
-  /* Hide scrollbar visually but keep functionality */
-  scrollbar-width: thin; 
-}
-.feed::-webkit-scrollbar {
-  width: 4px;
+  width: 100%;
+  padding-bottom: 60px; /* Breathability at bottom */
 }
 
-/* Tablet Responsiveness */
+/* Scrollbar styling for any inside overflows */
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+/* Large Tablet Responsiveness */
 @media (max-width: 1024px) {
   .layout {
-    grid-template-columns: 220px minmax(0, 1fr); /* Hide rightbar */
+    grid-template-columns: 240px minmax(380px, 1fr);
+    padding: 0 var(--gap-md);
+    gap: var(--gap-md);
   }
 }
 
@@ -46,13 +46,12 @@
   .layout {
     grid-template-columns: 1fr;
     padding: 0;
+    margin-top: 70px; 
     gap: 0;
-    height: 100vh;
-    margin-top: 60px; /* Smaller header */
   }
   
   .feed {
     padding: var(--gap-sm);
-    padding-bottom: 80px; /* Extra space for bottom nav on mobile */
+    padding-bottom: 80px;
   }
 }
