@@ -13,7 +13,7 @@
   max-width: 1250px;
   margin: 0 auto;
   width: 100%;
-  margin-top: calc(85px + var(--gap-md)); /* Space under header */
+  margin-top: calc(85px + var(--gap-md));
   align-items: start; 
 }
 
