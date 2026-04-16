@@ -41,11 +41,14 @@
 }
 
 .login-logo {
-  width: 60px;
-  height: auto;
+  width: 90px;
+  height: 90px;
   margin: 0 auto 20px auto;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
+  clip-path: inset(5% 10% 38% 10%);
+  mix-blend-mode: multiply;
 }
 
 .login-form h2 {
