@@ -7,13 +7,12 @@
 
 .layout {
   display: grid;
-  grid-template-columns: 280px minmax(450px, 1fr);
+  grid-template-columns: 280px minmax(500px, 1fr) 300px;
   gap: var(--gap-lg);
-  padding: 0 var(--gap-lg);
-  max-width: 1200px;
+  padding: var(--gap-md) var(--gap-lg);
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  margin-top: calc(110px + var(--gap-md)); /* Accounting for floating dock */
   align-items: start; 
 }
 
@@ -31,8 +30,8 @@
 
 @media (max-width: 1150px) {
   .layout {
-    grid-template-columns: 250px minmax(380px, 1fr);
-    padding: 0 var(--gap-md);
+    grid-template-columns: 260px minmax(380px, 1fr);
+    padding: var(--gap-md);
     gap: var(--gap-md);
   }
 }
@@ -41,7 +40,6 @@
   .layout {
     grid-template-columns: 1fr;
     padding: 0;
-    margin-top: 100px; 
     gap: 0;
   }
   

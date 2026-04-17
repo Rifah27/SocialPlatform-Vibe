@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./styles/App.css";
 
-import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import PostCard from "./components/PostCard";
+import Rightbar from "./components/Rightbar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 
@@ -112,16 +112,11 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header />
       <div className="layout">
-        
-        {/* Left Sidebar (Consolidated Navigation + Contacts) */}
         <Sidebar onLogout={handleLogout} />
         
         {/* Main Feed Column */}
         <main className="feed">
-          
-          {/* Stories Section */}
           <section className="stories-container glass-panel">
             {stories.map(story => (
               <div key={story.id} className={`story-item ${story.isUser ? 'user-story' : ''}`}>
@@ -134,14 +129,14 @@ export default function App() {
             ))}
           </section>
 
-          {/* Posts */}
           <div className="posts-container">
             {demoPosts.map((post) => (
               <PostCard key={post.id} post={post} />
             ))}
           </div>
-          
         </main>
+        
+        <Rightbar />
       </div>
     </div>
   );

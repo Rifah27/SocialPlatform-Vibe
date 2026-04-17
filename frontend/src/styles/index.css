@@ -1,26 +1,26 @@
 :root {
-  /* Dynamic Vibrant Colorful Palette */
-  --bg: #eff6ff; 
-  --bg-gradient: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  /* Electric Twilight & Holographic Vibrant Palette */
+  --bg: #ece9e6; 
+  --bg-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #9d50bb, #f80759);
   
   /* Deep Premium Frosted Glass */
-  --card-bg: rgba(255, 255, 255, 0.55);
-  --card-border: rgba(255, 255, 255, 0.8);
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --card-border: rgba(255, 255, 255, 0.9);
   
   /* Crisp Text and Accents */
   --text-main: #0f172a;
   --text-muted: #475569;
-  --accent: #ec4899; 
-  --accent-secondary: #8b5cf6;
+  --accent: #e73c7e; 
+  --accent-secondary: #23d5ab;
   
   /* Energetic Gradients */
-  --gradient-primary: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
-  --gradient-hover: linear-gradient(135deg, #d946ef 0%, #7c3aed 100%);
+  --gradient-primary: linear-gradient(135deg, #f80759 0%, #e73c7e 100%);
+  --gradient-hover: linear-gradient(135deg, #9d50bb 0%, #23a6d5 100%);
 
   /* Refined Details */
-  --radius-sm: 12px;
-  --radius-md: 18px;
-  --radius-lg: 24px;
+  --radius-sm: 14px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
   --radius-full: 9999px;
   --gap-sm: 12px;
   --gap-md: 24px;
@@ -43,6 +43,8 @@
 body {
   background: var(--bg);
   background-image: var(--bg-gradient);
+  background-size: 300% 300%;
+  animation: gradientFlow 20s ease infinite;
   background-attachment: fixed;
   color: var(--text-main);
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -51,6 +53,12 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Base Bento Class for reuse */

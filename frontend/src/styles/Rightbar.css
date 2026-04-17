@@ -1,6 +1,6 @@
 .rightbar {
   position: sticky;
-  top: calc(90px + var(--gap-md));
+  top: var(--gap-md);
   background: var(--card-bg);
   backdrop-filter: var(--blur-md);
   -webkit-backdrop-filter: var(--blur-md);
@@ -8,7 +8,7 @@
   border-radius: var(--radius-lg);
   padding: 24px 20px;
   box-shadow: var(--shadow-sm);
-  height: calc(100vh - 90px - var(--gap-md) * 2);
+  height: calc(100vh - var(--gap-md) * 2);
   width: 100%;
   display: flex;
   flex-direction: column;

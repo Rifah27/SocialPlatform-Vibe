@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import {
   FaUser, FaHome, FaUsers, FaCommentDots, FaBell,
-  FaCamera, FaVideo, FaGamepad, FaUsersCog, FaShoppingCart,
+  FaCamera, FaVideo, FaGamepad, FaShoppingCart,
   FaSave, FaCog, FaSignOutAlt, FaChevronDown, FaChevronUp, FaUserCircle,
-  FaSmile, FaThumbsUp, FaComment, FaSearch, FaUserFriends, FaUserPlus
+  FaSmile, FaThumbsUp, FaComment
 } from "react-icons/fa";
 import "../styles/Sidebar.css";
+import Logo from "../assets/vibera_v_logo.png";
 
 export default function Sidebar({ onLogout }) {
   const [showFriends, setShowFriends] = useState(false);
@@ -13,7 +14,6 @@ export default function Sidebar({ onLogout }) {
   const [showNotifications, setShowNotifications] = useState(false);
   const [activeChat, setActiveChat] = useState(null);
   const [chatInput, setChatInput] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
 
   const friends = ["Aiza", "Alia", "Aliza", "Ansh", "Aryan"];
 
@@ -28,13 +28,6 @@ export default function Sidebar({ onLogout }) {
   const notifications = [
     { name: "Aqsa", text: "Missed call from Aqsa" },
     { name: "Aiza", text: "Aiza posted a new post" }
-  ];
-
-  const onlineFriends = [
-    { name: "Sana Arif", status: "online", img: "https://i.pravatar.cc/150?img=5" },
-    { name: "Arif Ali", status: "online", img: "https://i.pravatar.cc/150?img=6" },
-    { name: "Prashant Tiwari", status: "away", img: "https://i.pravatar.cc/150?img=7" },
-    { name: "Mohd. Hassan", status: "offline", img: "https://i.pravatar.cc/150?img=8" },
   ];
 
   const [chats, setChats] = useState({
@@ -80,6 +73,11 @@ export default function Sidebar({ onLogout }) {
 
   return (
     <aside className="sidebar">
+      {/* Brand Logo perfectly injected at the top of Sidebar */}
+      <div className="sidebar-brand">
+        <img src={Logo} alt="Vibera" className="sidebar-logo" />
+      </div>
+
       <nav>
         <ul className="menu">
           <li className="menu-section"><strong>Profile</strong></li>
@@ -121,32 +119,10 @@ export default function Sidebar({ onLogout }) {
           <li><FaVideo className="icon" /> Videos</li>
           <li><FaGamepad className="icon" /> Games</li>
           <li><FaShoppingCart className="icon" /> Marketplace</li>
+          <li><FaSave className="icon" /> Saved</li>
         </ul>
 
-        {/* Consolidated Rightbar Features */}
-        <ul className="menu">
-          <li className="menu-section"><strong>Contacts</strong></li>
-          <div className="sidebar-search">
-            <FaSearch className="sidebar-search-icon" />
-            <input 
-              type="text" 
-              placeholder="Search people..." 
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          {onlineFriends.map((friend, idx) => (
-            <li key={idx} className="friend-item" onClick={() => setActiveChat(friend.name)}>
-              <div className="friend-avatar-wrapper">
-                <img src={friend.img} alt={friend.name} className="friend-avatar" />
-                <span className={`status-dot ${friend.status}`}></span>
-              </div>
-              <span style={{ fontSize: '14px' }}>{friend.name}</span>
-            </li>
-          ))}
-        </ul>
-
-        <ul className="menu">
+        <ul className="menu" style={{marginTop: "auto"}}>
           <li className="menu-section"><strong>More</strong></li>
           <li><FaCog className="icon" /> Settings</li>
           <li onClick={handleLogout}><FaSignOutAlt className="icon" /> Logout</li>
