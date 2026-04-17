@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
-import logo from "../assets/vibera_logo.png";
+import logo from "../assets/vibera_v_logo.png";
 import { FaEye, FaEyeSlash, FaUserAlt, FaLock, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
