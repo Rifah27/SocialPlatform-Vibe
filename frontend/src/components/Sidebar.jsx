@@ -3,7 +3,7 @@ import {
   FaUser, FaHome, FaUsers, FaCommentDots, FaBell,
   FaCamera, FaVideo, FaGamepad, FaUsersCog, FaShoppingCart,
   FaSave, FaCog, FaSignOutAlt, FaChevronDown, FaChevronUp, FaUserCircle,
-  FaSmile, FaThumbsUp, FaComment
+  FaSmile, FaThumbsUp, FaComment, FaSearch, FaUserFriends, FaUserPlus
 } from "react-icons/fa";
 import "../styles/Sidebar.css";
 
@@ -13,6 +13,7 @@ export default function Sidebar({ onLogout }) {
   const [showNotifications, setShowNotifications] = useState(false);
   const [activeChat, setActiveChat] = useState(null);
   const [chatInput, setChatInput] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const friends = ["Aiza", "Alia", "Aliza", "Ansh", "Aryan"];
 
@@ -29,43 +30,30 @@ export default function Sidebar({ onLogout }) {
     { name: "Aiza", text: "Aiza posted a new post" }
   ];
 
+  const onlineFriends = [
+    { name: "Sana Arif", status: "online", img: "https://i.pravatar.cc/150?img=5" },
+    { name: "Arif Ali", status: "online", img: "https://i.pravatar.cc/150?img=6" },
+    { name: "Prashant Tiwari", status: "away", img: "https://i.pravatar.cc/150?img=7" },
+    { name: "Mohd. Hassan", status: "offline", img: "https://i.pravatar.cc/150?img=8" },
+  ];
+
   const [chats, setChats] = useState({
     Alia: [
       { sender: "Alia", text: "Hey! How are you?", icons: [<FaSmile />, <FaThumbsUp />] },
       { sender: "Me", text: "I'm good, how about you?", icons: [<FaComment />] },
-      { sender: "Alia", text: "I'm great! Just finished work.", icons: [<FaSmile />] },
-      { sender: "Me", text: "Nice! Want to grab coffee later?", icons: [<FaThumbsUp />] },
-      { sender: "Alia", text: "Sure, sounds perfect!", icons: [<FaSmile />] },
-      { sender: "Me", text: "See you at 5 PM then.", icons: [] },
     ],
     Ansh: [
       { sender: "Eram", text: "Let's meet tomorrow.", icons: [<FaComment />] },
       { sender: "Me", text: "What time?", icons: [] },
-      { sender: "Eram", text: "6 PM works.", icons: [<FaThumbsUp />] },
-      { sender: "Me", text: "Perfect, see you then!", icons: [<FaSmile />] },
-      { sender: "Eram", text: "Don't forget to bring the documents.", icons: [] },
-      { sender: "Me", text: "Sure thing!", icons: [<FaThumbsUp />] },
     ],
     Aiza: [
       { sender: "Aiza", text: "Did you see my new post?", icons: [<FaThumbsUp />] },
-      { sender: "Me", text: "Yes! It's awesome!", icons: [<FaSmile />] },
-      { sender: "Aiza", text: "Thanks ", icons: [<FaSmile />, <FaThumbsUp />] },
-      { sender: "Me", text: "Really inspired me!", icons: [<FaComment />] },
-      { sender: "Aiza", text: "Glad to hear that!", icons: [] },
     ],
     Aryan: [
       { sender: "Aqsa", text: "You missed my call", icons: [<FaComment />] },
-      { sender: "Me", text: "Sorry, was in a meeting.", icons: [] },
-      { sender: "Aqsa", text: "No worries, call later.", icons: [<FaThumbsUp />] },
-      { sender: "Me", text: "Will do!", icons: [<FaSmile />] },
-      { sender: "Aqsa", text: "Cool, talk soon.", icons: [] },
     ],
     Aliza: [
       { sender: "Aliza", text: "Long time no see!", icons: [<FaSmile />] },
-      { sender: "Me", text: "Yeah, let's plan something.", icons: [] },
-      { sender: "Aliza", text: "Great idea!", icons: [<FaThumbsUp />] },
-      { sender: "Me", text: "How about dinner this weekend?", icons: [<FaComment />] },
-      { sender: "Aliza", text: "Sounds perfect!", icons: [<FaSmile />] },
     ]
   });
 
@@ -73,12 +61,14 @@ export default function Sidebar({ onLogout }) {
     if (onLogout) {
       onLogout();
     }
-    console.log("User logged out");
   };
 
   const handleSend = () => {
-    if (!chatInput.trim()) return;
+    if (!chatInput.trim() || !activeChat) return;
     const updatedChats = { ...chats };
+    if (!updatedChats[activeChat]) {
+       updatedChats[activeChat] = [];
+    }
     updatedChats[activeChat].push({
       sender: "Me",
       text: chatInput,
@@ -94,19 +84,6 @@ export default function Sidebar({ onLogout }) {
         <ul className="menu">
           <li className="menu-section"><strong>Profile</strong></li>
           <li><FaHome className="icon" /> Home</li>
-
-          <li onClick={() => setShowFriends(!showFriends)} className="dropdown-toggle">
-            <FaUsers className="icon" /> Friends
-            {showFriends ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
-          </li>
-          {showFriends && (
-            <ul className="submenu">
-              {friends.map((friend, index) => (
-                <li key={index}><FaUserCircle className="icon" /> {friend}</li>
-              ))}
-            </ul>
-          )}
-
           <li onClick={() => setShowMessages(!showMessages)} className="dropdown-toggle">
             <div className="icon-wrapper">
               <FaCommentDots className="icon" />
@@ -128,7 +105,6 @@ export default function Sidebar({ onLogout }) {
               ))}
             </ul>
           )}
-
           <li onClick={() => setShowNotifications(!showNotifications)} className="dropdown-toggle">
             <div className="icon-wrapper">
               <FaBell className="icon" />
@@ -137,19 +113,6 @@ export default function Sidebar({ onLogout }) {
             Notifications
             {showNotifications ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
           </li>
-          {showNotifications && (
-            <ul className="submenu">
-              {notifications.map((note, index) => (
-                <li key={index} className="message-item">
-                  <FaUserCircle className="icon" />
-                  <div className="msg-content">
-                    <strong>{note.name}</strong>
-                    <span className="msg-text">{note.text}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
         </ul>
 
         <ul className="menu">
@@ -157,13 +120,34 @@ export default function Sidebar({ onLogout }) {
           <li><FaCamera className="icon" /> Photos</li>
           <li><FaVideo className="icon" /> Videos</li>
           <li><FaGamepad className="icon" /> Games</li>
-          <li><FaUsersCog className="icon" /> Groups</li>
           <li><FaShoppingCart className="icon" /> Marketplace</li>
+        </ul>
+
+        {/* Consolidated Rightbar Features */}
+        <ul className="menu">
+          <li className="menu-section"><strong>Contacts</strong></li>
+          <div className="sidebar-search">
+            <FaSearch className="sidebar-search-icon" />
+            <input 
+              type="text" 
+              placeholder="Search people..." 
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          {onlineFriends.map((friend, idx) => (
+            <li key={idx} className="friend-item" onClick={() => setActiveChat(friend.name)}>
+              <div className="friend-avatar-wrapper">
+                <img src={friend.img} alt={friend.name} className="friend-avatar" />
+                <span className={`status-dot ${friend.status}`}></span>
+              </div>
+              <span style={{ fontSize: '14px' }}>{friend.name}</span>
+            </li>
+          ))}
         </ul>
 
         <ul className="menu">
           <li className="menu-section"><strong>More</strong></li>
-          <li><FaSave className="icon" /> Saved</li>
           <li><FaCog className="icon" /> Settings</li>
           <li onClick={handleLogout}><FaSignOutAlt className="icon" /> Logout</li>
         </ul>
@@ -177,7 +161,7 @@ export default function Sidebar({ onLogout }) {
               <button className="close-btn" onClick={() => setActiveChat(null)}>×</button>
             </div>
             <div className="chatbox-body">
-              {chats[activeChat].map((msg, index) => (
+              {(chats[activeChat] || []).map((msg, index) => (
                 <div key={index} className={`chat-msg ${msg.sender === "Me" ? "me" : "other"}`}>
                   <div className="chat-bubble">
                     {msg.text}{" "}

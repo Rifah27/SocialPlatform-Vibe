@@ -1,18 +1,21 @@
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 90px;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1400px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--gap-lg);
+  padding: 0 32px;
+  border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: var(--blur-md);
   -webkit-backdrop-filter: var(--blur-md);
-  border-bottom: 1px solid var(--card-border);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   flex-wrap: nowrap;
 }
