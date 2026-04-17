@@ -1,37 +1,37 @@
 :root {
-  /* Vibrant Colorful Light Theme */
-  --bg: #fce7f3; 
-  --bg-gradient: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  /* Dynamic Vibrant Colorful Palette */
+  --bg: #eff6ff; 
+  --bg-gradient: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
   
-  /* Frosted Glass Cards for Vibrant Backgrounds */
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --card-border: rgba(255, 255, 255, 0.6);
+  /* Deep Premium Frosted Glass */
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(255, 255, 255, 0.8);
   
-  /* Deep Royal Text and Accents */
-  --text-main: #1e1b4b;
-  --text-muted: #4338ca;
-  --accent: #e11d48; 
-  --accent-secondary: #9333ea;
+  /* Crisp Text and Accents */
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --accent: #ec4899; 
+  --accent-secondary: #8b5cf6;
   
   /* Energetic Gradients */
-  --gradient-primary: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
-  --gradient-hover: linear-gradient(135deg, #ffb199 0%, #ff0844 100%);
+  --gradient-primary: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  --gradient-hover: linear-gradient(135deg, #d946ef 0%, #7c3aed 100%);
 
   /* Refined Details */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
   --radius-full: 9999px;
   --gap-sm: 12px;
   --gap-md: 24px;
   --gap-lg: 32px;
 
-  /* Soft Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
-  --shadow-glow: 0 4px 15px rgba(244, 63, 94, 0.25);
-  --blur-md: none;
-  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Sophisticated Soft Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 10px 20px -5px rgba(236, 72, 153, 0.4);
+  --blur-md: blur(24px);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -56,11 +56,17 @@ body {
 /* Base Bento Class for reuse */
 .glass-panel {
   background: var(--card-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.glass-panel:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 /* Custom Scrollbar */
