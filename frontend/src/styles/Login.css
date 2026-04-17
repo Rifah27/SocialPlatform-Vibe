@@ -43,7 +43,7 @@
 .login-logo {
   width: 96px;
   height: 96px;
-  margin: 0 auto -4px auto;
+  margin: 0 auto -14px auto;
   display: block;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.25));
