@@ -95,17 +95,17 @@
 }
 
 .login-brand-logo, .login-logo {
-  width: 130px;
-  height: 130px;
+  width: 105px;
+  height: 105px;
   object-fit: contain;
-  margin-bottom: -35px;
+  margin-bottom: -30px;
   mix-blend-mode: multiply;
 }
 
 .login-header h2 {
   font-size: 1.8rem;
   color: var(--text-main);
-  margin-top: 0px;
+  margin-top: -5px;
   margin-bottom: 8px;
   font-weight: 700;
 }
