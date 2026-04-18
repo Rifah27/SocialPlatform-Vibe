@@ -14,8 +14,8 @@
   --accent-secondary: #23d5ab;
   
   /* Energetic Gradients */
-  --gradient-primary: linear-gradient(135deg, #f80759 0%, #e73c7e 100%);
-  --gradient-hover: linear-gradient(135deg, #9d50bb 0%, #23a6d5 100%);
+  --gradient-primary: linear-gradient(135deg, #9d50bb 0%, #e73c7e 100%);
+  --gradient-hover: linear-gradient(135deg, #7c3aed 0%, #d946ef 100%);
 
   /* Refined Details */
   --radius-sm: 14px;
