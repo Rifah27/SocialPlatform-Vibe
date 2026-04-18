@@ -93,17 +93,18 @@
   margin-bottom: 32px;
 }
 
-.login-brand-logo {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  margin-bottom: 16px;
+.login-brand-logo, .login-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: -15px;
   mix-blend-mode: multiply;
 }
 
 .login-header h2 {
   font-size: 1.8rem;
   color: var(--text-main);
+  margin-top: 0px;
   margin-bottom: 8px;
   font-weight: 700;
 }
