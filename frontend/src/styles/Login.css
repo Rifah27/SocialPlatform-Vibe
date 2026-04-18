@@ -19,8 +19,8 @@
   display: flex;
   width: 100%;
   max-width: 1200px;
-  height: 85vh;
-  min-height: 600px;
+  height: 90vh;
+  min-height: 720px;
   background: #ffffff;
   border-radius: var(--radius-lg);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
