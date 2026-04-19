@@ -1,23 +1,20 @@
 .post-card {
-  background: var(--card-bg);
-  backdrop-filter: var(--blur-md);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
   padding: 32px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   width: 100%;
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: 0;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  transition: var(--transition);
+  gap: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .post-card:hover {
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
 }
 
 .post-header {
@@ -33,13 +30,16 @@
 }
 
 .post-header h3 {
-  font-size: 18px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
   margin: 0;
 }
 
 .post-header span {
-  font-size: 14px;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
 }
 
 .content {
@@ -99,24 +99,25 @@
 }
 
 .actions button {
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid var(--card-border);
-  padding: 8px 16px;
-  border-radius: var(--radius-full);
-  color: var(--text-main);
+  background: #f8fafc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 14px;
+  color: #64748b;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 0.95rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 8px;
-  transition: var(--transition);
+  gap: 10px;
+  transition: all 0.3s ease;
 }
 
 .actions button:hover {
-  background: #ffffff;
-  color: var(--accent);
+  background: white;
+  color: #9d50bb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
 }
 
 .actions button.active {
@@ -153,18 +154,21 @@
 
 .comment-content h4 {
   margin: 0;
-  font-size: 14px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
 }
 
 .comment-content p {
-  margin: 2px 0;
-  font-size: 13px;
-  color: var(--text-main);
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #475569;
 }
 
 .comment-content span {
-  font-size: 11px;
-  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9d50bb;
 }
 
 .comment-form {
@@ -174,20 +178,20 @@
 
 .comment-form input {
   flex: 1;
-  padding: 10px 14px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--card-border);
-  font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.5);
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+  background-color: #f8fafc;
   color: var(--text-main);
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
 .comment-form input:focus {
   outline: none;
   background: #fff;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+  border-color: #9d50bb;
+  box-shadow: 0 0 15px rgba(157, 80, 187, 0.1);
 }
 
 .comment-form button {
