@@ -114,7 +114,7 @@
 
 .nav button:hover {
   background: var(--gradient-primary);
-  color: #fff;
+  color: #ffffff;
   border-color: transparent;
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
