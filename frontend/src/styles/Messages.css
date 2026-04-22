@@ -75,7 +75,7 @@
 
 .user-item.active {
     background: var(--gradient-primary);
-    color: white;
+    color: #ffffff;
 }
 
 .user-item.active .username { color: white; }
