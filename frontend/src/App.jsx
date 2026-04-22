@@ -127,8 +127,14 @@ export default function App() {
 
   return (
     <div className="app">
+      {/* Decorative Background Elements */}
+      <div className="bg-sphere sphere-1"></div>
+      <div className="bg-sphere sphere-2"></div>
+      <div className="bg-sphere sphere-3"></div>
+
       <div className="layout">
         <Sidebar onLogout={handleLogout} setView={setView} activeView={view} user={user} />
+
 
         
         {/* Main Content Area: Floating Island Feed */}

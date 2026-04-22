@@ -25,12 +25,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
+
 .sidebar-logo {
-  height: 60px;
-  width: 60px;
+  height: 85px;
+  width: 85px;
+
   object-fit: contain;
   filter: drop-shadow(0 10px 15px rgba(157, 80, 187, 0.3));
   transition: transform 0.4s ease;
