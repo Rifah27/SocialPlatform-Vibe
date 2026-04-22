@@ -15,38 +15,45 @@ export default function Header() {
   };
 
   return (
-    <header className="header">
-      <div className="logo">
-        <img src={Logo} alt="Vibera Logo" className="logoo-img" />
+    <header className="header-floating-island">
+      {/* Brand Logo */}
+      <div className="header-brand">
+        <img src={Logo} alt="Vibera" className="brand-v-logo" />
       </div>
 
-      <form className="search-wrapper" onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Search..."
-          className="search"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button type="submit" className="search-btn">
-          <FaSearch />
-        </button>
+      {/* Modern Search Hub */}
+      <form className="header-search-hub" onSubmit={handleSearch}>
+        <div className="search-pill-container">
+          <FaSearch className="search-prefix" />
+          <input
+            type="text"
+            placeholder="Search everything..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
       </form>
 
-      <nav className="nav">
-        <button>
+      {/* Navigation & Action Hub */}
+      <nav className="header-nav-hub">
+        <button className="nav-icon-btn active" title="Home">
           <FaHome />
+          <div className="nav-indicator"></div>
         </button>
-        <button>
+        <button className="nav-icon-btn" title="Notifications">
           <FaBell />
+          <span className="nav-badge">2</span>
         </button>
-        <button>
+        <button className="nav-icon-btn" title="Messages">
           <FaEnvelope />
         </button>
-        <button>
-          <FaUser />
-        </button>
+        <div className="user-profile-mini">
+           <div className="mini-avatar-wrap">
+             <FaUser />
+           </div>
+        </div>
       </nav>
     </header>
   );
 }
+

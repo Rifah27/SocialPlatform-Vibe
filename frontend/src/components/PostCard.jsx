@@ -12,74 +12,72 @@ export default function PostCard({ post }) {
   const toggleComments = () => setShowComments(!showComments);
 
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true
-    });
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
   };
 
+  const isFeatured = post.likes > 20;
+
   return (
-    <article className="post-card">
-      <header className="post-header">
-        <img className="avatar" src={post.author.avatar} alt={post.author.name} />
-        <div>
-          <h3>{post.author.name}</h3>
-          <span>{formatDate(post.createdAt)}</span>
+    <article className={`post-card-premium ${isFeatured ? "featured" : ""}`}>
+      {/* Immersive Media Background / Container */}
+      <div className="post-media-container">
+        {post.media?.length > 0 ? (
+          <img src={post.media[0]} alt="Post Content" className="main-media" />
+        ) : (
+          <div className="text-bg-gradient"></div>
+        )}
+        
+        {/* Floating Author Badge */}
+        <div className="author-badge-glass">
+          <img className="author-avatar" src={post.author.avatar} alt={post.author.name} />
+          <div className="author-meta">
+            <h4>{post.author.name}</h4>
+            <span>{formatDate(post.createdAt)}</span>
+          </div>
         </div>
-      </header>
 
-      <p className="content">{post.content}</p>
-
-      {post.media?.length > 0 && (
-        <div className="media-wrapper">
-          {post.media.map((img, idx) => (
-            <img key={idx} className="media" src={img} alt={`media ${idx}`} />
-          ))}
-        </div>
-      )}
-
-      {post.tags && (
-        <div className="tags">
-          {post.tags.map((tag, idx) => (
-            <span key={idx} className="tag">{tag}</span>
-          ))}
-        </div>
-      )}
-
-      <div className="post-stats">
-        <span>{liked ? post.likes + 1 : post.likes} likes</span>
-        <span>{post.shares} shares</span>
+        {/* Featured Tag */}
+        {isFeatured && <div className="trending-tag">Trending</div>}
       </div>
 
-      <footer className="actions">
-        <button onClick={handleLike} className={liked ? "active" : ""}>
-          {liked ? <FaHeart /> : <FaRegHeart />} Like
-        </button>
-        <button onClick={toggleComments}>
-          <FaComment /> Comments
-        </button>
-        <button onClick={handleShare} className={shared ? "active" : ""}>
-          <FaShare /> Share
+      <div className="post-body">
+        <p className="post-content-text">{post.content}</p>
+        
+        {post.tags && (
+          <div className="post-tags-list">
+            {post.tags.map((tag, idx) => (
+              <span key={idx} className="glass-tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <footer className="post-actions-acrylic">
+        <div className="action-stats">
+          <div className={`stat-item ${liked ? "liked" : ""}`} onClick={handleLike}>
+            {liked ? <FaHeart className="pop-icon" /> : <FaRegHeart />}
+            <span>{liked ? post.likes + 1 : post.likes}</span>
+          </div>
+          <div className="stat-item" onClick={toggleComments}>
+            <FaComment />
+            <span>{post.comments?.length || 0}</span>
+          </div>
+        </div>
+
+        <button className={`share-btn-minimal ${shared ? "shared" : ""}`} onClick={handleShare}>
+          <FaShare />
         </button>
       </footer>
 
       {showComments && post.comments && (
-        <div className="comments">
+        <div className="post-comments-drawer">
           {post.comments.map((comment) => (
-            <div key={comment.id} className="comment">
-              <img
-                className="avatar"
-                src={comment.author.avatar}
-                alt={comment.author.name}
-              />
-              <div>
+            <div key={comment.id} className="comment-line">
+              <img className="comment-avatar-mini" src={comment.author.avatar} alt={comment.author.name} />
+              <div className="comment-content">
                 <strong>{comment.author.name}</strong>
                 <p>{comment.content}</p>
-                <span>{formatDate(comment.createdAt)}</span>
               </div>
             </div>
           ))}
@@ -88,3 +86,4 @@ export default function PostCard({ post }) {
     </article>
   );
 }
+

@@ -34,72 +34,67 @@ export default function Rightbar() {
   );
 
   return (
-    <aside className="rightbar">
-      <div className="rightbar-columns">
-        <div className="rightbar-column left">
-          <section className="contacts-search">
-            <h3><FaSearch /> Search Contacts</h3>
-            <div className="search-input-container">
-              <FaSearch className="search-icon" />
-              <input
-                type="text"
-                placeholder="Search contacts..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input"
-              />
+    <aside className="rightbar-modern">
+      <section className="rightbar-section glass-item-card">
+        <h3 className="section-title"><FaSearch /> Search</h3>
+        <div className="modern-search-bar">
+          <FaSearch className="prefix-icon" />
+          <input
+            type="text"
+            placeholder="Search members..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+        <ul className="members-scroll">
+          {filteredContacts.map((contact, index) => (
+            <li key={index} className="member-item">
+              <div className="member-avatar">{contact.name.charAt(0)}</div>
+              <div className="member-info">
+                <span className="member-name">{contact.name}</span>
+                <span className="member-id">{contact.email.split('@')[0]}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="rightbar-section glass-item-card">
+        <h3 className="section-title"><FaUserFriends /> Online Friends</h3>
+        <div className="friends-grid">
+          {friendsList.filter(f => f.status === "online").map((friend, index) => (
+            <div key={index} className="friend-bubble" title={friend.name}>
+              <div className="friend-frame">
+                <img src={friend.img} alt={friend.name} />
+                <span className="status-glow online"></span>
+              </div>
+              <span className="friend-label">{friend.name.split(' ')[0]}</span>
             </div>
-            <ul className="contacts-list">
-              {filteredContacts.map((contact, index) => (
-                <li key={index} className="contact-item">
-                  <div className="contact-avatar">{contact.name.charAt(0)}</div>
-                  <div className="contact-info">
-                    <span className="contact-name">{contact.name}</span>
-                    <span className="contact-email">{contact.email}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="friends">
-            <h3><FaUserFriends /> Friends</h3>
-            <ul>
-              {friendsList.map((friend, index) => (
-                <li key={index}>
-                  <img src={friend.img} alt={friend.name} />
-                  <span>{friend.name}</span>
-                  <span className={`status ${friend.status}`}></span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="suggestions">
-            <h3><FaUserPlus /> Suggestions</h3>
-            <ul>
-              <li>
-                <img src="https://i.pravatar.cc/150?img=10" alt="user" />
-                <span className="suggestion-name">Shraddha Singh</span>
-                <button className="add-btn">+ Add</button>
-              </li>
-              <li>
-                <img src="https://i.pravatar.cc/150?img=20" alt="user" />
-                <span className="suggestion-name">Riya Shukla</span>
-                <button className="add-btn">+ Add</button>
-              </li>
-              <li>
-                <img src="https://i.pravatar.cc/150?img=21" alt="user" />
-                <span className="suggestion-name">Amayra Khan</span>
-                <button className="add-btn">+ Add</button>
-              </li>
-            </ul>
-          </section>
+          ))}
         </div>
+      </section>
 
-        <div className="rightbar-column right">
+      <section className="rightbar-section glass-item-card suggestions-bento">
+        <h3 className="section-title"><FaUserPlus /> Suggestions</h3>
+        <div className="suggestions-stack">
+          {[
+            { name: "Shraddha Singh", img: "https://i.pravatar.cc/150?img=10" },
+            { name: "Riya Shukla", img: "https://i.pravatar.cc/150?img=20" },
+            { name: "Amayra Khan", img: "https://i.pravatar.cc/150?img=21" }
+          ].map((user, idx) => (
+            <div key={idx} className="suggestion-card">
+              <div className="suggestion-row">
+                <img src={user.img} alt="user" />
+                <div className="suggestion-meta">
+                  <span className="name">{user.name}</span>
+                  <button className="follow-btn">Follow</button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
+      </section>
     </aside>
   );
 }
+

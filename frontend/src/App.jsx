@@ -131,31 +131,39 @@ export default function App() {
         <Sidebar onLogout={handleLogout} setView={setView} activeView={view} user={user} />
 
         
-        {/* Main Content Area */}
-        <main className="feed">
+        {/* Main Content Area: Floating Island Feed */}
+        <main className="feed-container-main">
           {(() => {
             switch(view) {
               case "feed":
                 return (
-                  <>
-                    <section className="stories-container glass-panel">
-                      {stories.map(story => (
-                        <div key={story.id} className={`story-item ${story.isUser ? 'user-story' : ''}`}>
-                          <div className="story-ring">
-                            <img src={story.img} alt={story.name} />
-                            {story.isUser && <div className="add-story-btn"><FaPlus size={10} /></div>}
+                  <div className="feed-view-staggered">
+                    {/* Enhanced Stories Hub */}
+                    <section className="stories-hub glass-panel">
+                      <div className="stories-scroll">
+                        {stories.map(story => (
+                          <div key={story.id} className={`story-bubble ${story.isUser ? 'my-story' : ''}`}>
+                            <div className="story-aura">
+                              <div className="story-frame">
+                                <img src={story.img} alt={story.name} />
+                              </div>
+                              {story.isUser && <div className="add-token"><FaPlus size={10} /></div>}
+                            </div>
+                            <span className="story-label">{story.name}</span>
                           </div>
-                          <span>{story.name}</span>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </section>
-                    <div className="posts-container">
+
+                    {/* Staggered Post Feed */}
+                    <div className="posts-masonry-grid">
                       {demoPosts.map((post) => (
                         <PostCard key={post.id} post={post} />
                       ))}
                     </div>
-                  </>
+                  </div>
                 );
+
               case "messages":
                 return <Messages currentUser={user} />;
               case "notifications":
