@@ -8,47 +8,8 @@ import {
 import "../styles/Sidebar.css";
 import Logo from "../assets/vibera_v_logo.png";
 
-export default function Sidebar({ onLogout }) {
-  const [showFriends, setShowFriends] = useState(false);
-  const [showMessages, setShowMessages] = useState(false);
+export default function Sidebar({ onLogout, setView, activeView, user }) {
   const [showNotifications, setShowNotifications] = useState(false);
-  const [activeChat, setActiveChat] = useState(null);
-  const [chatInput, setChatInput] = useState("");
-
-  const friends = ["Aiza", "Alia", "Aliza", "Ansh", "Aryan"];
-
-  const messages = [
-    { name: "Alia", text: "Hey! How are you?" },
-    { name: "Eram", text: "Let's meet tomorrow." },
-    { name: "Aiza", text: "Check my new post!" },
-    { name: "Aqsa", text: "Missed call from me" },
-    { name: "Aliza", text: "Long time no see!" }
-  ];
-
-  const notifications = [
-    { name: "Aqsa", text: "Missed call from Aqsa" },
-    { name: "Aiza", text: "Aiza posted a new post" }
-  ];
-
-  const [chats, setChats] = useState({
-    Alia: [
-      { sender: "Alia", text: "Hey! How are you?", icons: [<FaSmile />, <FaThumbsUp />] },
-      { sender: "Me", text: "I'm good, how about you?", icons: [<FaComment />] },
-    ],
-    Ansh: [
-      { sender: "Eram", text: "Let's meet tomorrow.", icons: [<FaComment />] },
-      { sender: "Me", text: "What time?", icons: [] },
-    ],
-    Aiza: [
-      { sender: "Aiza", text: "Did you see my new post?", icons: [<FaThumbsUp />] },
-    ],
-    Aryan: [
-      { sender: "Aqsa", text: "You missed my call", icons: [<FaComment />] },
-    ],
-    Aliza: [
-      { sender: "Aliza", text: "Long time no see!", icons: [<FaSmile />] },
-    ]
-  });
 
   const handleLogout = () => {
     if (onLogout) {
@@ -56,111 +17,113 @@ export default function Sidebar({ onLogout }) {
     }
   };
 
-  const handleSend = () => {
-    if (!chatInput.trim() || !activeChat) return;
-    const updatedChats = { ...chats };
-    if (!updatedChats[activeChat]) {
-       updatedChats[activeChat] = [];
-    }
-    updatedChats[activeChat].push({
-      sender: "Me",
-      text: chatInput,
-      icons: []
-    });
-    setChats(updatedChats);
-    setChatInput("");
-  };
-
   return (
     <aside className="sidebar">
-      {/* Brand Logo perfectly injected at the top of Sidebar */}
+      {/* Brand Logo - Floating Island Style */}
       <div className="sidebar-brand">
         <img src={Logo} alt="Vibera" className="sidebar-logo" />
       </div>
 
-      <nav>
-        <ul className="menu">
-          <li className="menu-section"><strong>Profile</strong></li>
-          <li><FaHome className="icon" /> Home</li>
-          <li onClick={() => setShowMessages(!showMessages)} className="dropdown-toggle">
-            <div className="icon-wrapper">
-              <FaCommentDots className="icon" />
-              {messages.length > 0 && <span className="badge">{messages.length}</span>}
-            </div>
-            Messages
-            {showMessages ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
-          </li>
-          {showMessages && (
-            <ul className="submenu">
-              {messages.map((msg, index) => (
-                <li key={index} className="message-item" onClick={() => setActiveChat(msg.name)}>
-                  <FaUserCircle className="icon" />
-                  <div className="msg-content">
-                    <strong>{msg.name}</strong>
-                    <span className="msg-text">{msg.text}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-          <li onClick={() => setShowNotifications(!showNotifications)} className="dropdown-toggle">
-            <div className="icon-wrapper">
-              <FaBell className="icon" />
-              {notifications.length > 0 && <span className="badge">{notifications.length}</span>}
-            </div>
-            Notifications
-            {showNotifications ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
-          </li>
-        </ul>
+      <nav className="sidebar-nav">
+        {/* Main Menu */}
+        <div className="nav-group">
+          <span className="group-title">Main</span>
+          <ul className="menu">
+            <li 
+              className={activeView === "feed" ? "active" : ""} 
+              onClick={() => setView("feed")}
+            >
+              <div className="icon-box"><FaHome className="icon" /></div>
+              <span>Home</span>
+              {activeView === "feed" && <div className="active-dot"></div>}
+            </li>
+            <li 
+              onClick={() => setView("messages")} 
+              className={activeView === "messages" ? "active" : ""}
+            >
+              <div className="icon-box">
+                <FaCommentDots className="icon" />
+              </div>
+              <span>Messages</span>
+              {activeView === "messages" && <div className="active-dot"></div>}
+            </li>
+            <li 
+              onClick={() => setView("notifications")} 
+              className={activeView === "notifications" ? "active" : ""}
+            >
+              <div className="icon-box">
+                <FaBell className="icon" />
+                <span className="badge">2</span>
+              </div>
+              <span>Notifications</span>
+              {activeView === "notifications" && <div className="active-dot"></div>}
+            </li>
+          </ul>
+        </div>
 
-        <ul className="menu">
-          <li className="menu-section"><strong>Explore</strong></li>
-          <li><FaCamera className="icon" /> Photos</li>
-          <li><FaVideo className="icon" /> Videos</li>
-          <li><FaGamepad className="icon" /> Games</li>
-          <li><FaShoppingCart className="icon" /> Marketplace</li>
-          <li><FaSave className="icon" /> Saved</li>
-        </ul>
+        {/* Discovery Group */}
+        <div className="nav-group">
+          <span className="group-title">Discovery</span>
+          <ul className="menu">
+            <li onClick={() => setView("photos")} className={activeView === "photos" ? "active" : ""}>
+               <div className="icon-box"><FaCamera className="icon" /></div> 
+               <span>Photos</span>
+               {activeView === "photos" && <div className="active-dot"></div>}
+            </li>
+            <li onClick={() => setView("videos")} className={activeView === "videos" ? "active" : ""}>
+               <div className="icon-box"><FaVideo className="icon" /></div> 
+               <span>Videos</span>
+               {activeView === "videos" && <div className="active-dot"></div>}
+            </li>
+            <li onClick={() => setView("games")} className={activeView === "games" ? "active" : ""}>
+               <div className="icon-box"><FaGamepad className="icon" /></div> 
+               <span>Games</span>
+               {activeView === "games" && <div className="active-dot"></div>}
+            </li>
+            <li onClick={() => setView("marketplace")} className={activeView === "marketplace" ? "active" : ""}>
+               <div className="icon-box"><FaShoppingCart className="icon" /></div> 
+               <span>Marketplace</span>
+               {activeView === "marketplace" && <div className="active-dot"></div>}
+            </li>
+          </ul>
+        </div>
 
-        <ul className="menu" style={{marginTop: "auto"}}>
-          <li className="menu-section"><strong>More</strong></li>
-          <li><FaCog className="icon" /> Settings</li>
-          <li onClick={handleLogout}><FaSignOutAlt className="icon" /> Logout</li>
-        </ul>
+        {/* Account Group */}
+        <div className="nav-group">
+          <span className="group-title">Personal</span>
+          <ul className="menu">
+            <li onClick={() => setView("saved")} className={activeView === "saved" ? "active" : ""}>
+              <div className="icon-box"><FaSave className="icon" /></div> 
+              <span>Saved</span>
+              {activeView === "saved" && <div className="active-dot"></div>}
+            </li>
+            <li onClick={() => setView("settings")} className={activeView === "settings" ? "active" : ""}>
+              <div className="icon-box"><FaCog className="icon" /></div> 
+              <span>Settings</span>
+              {activeView === "settings" && <div className="active-dot"></div>}
+            </li>
+          </ul>
+        </div>
       </nav>
 
-      {activeChat && (
-        <div className="chat-overlay" onClick={() => setActiveChat(null)}>
-          <div className="chatbox" onClick={e => e.stopPropagation()}>
-            <div className="chatbox-header">
-              <FaUserCircle className="icon" /> {activeChat}
-              <button className="close-btn" onClick={() => setActiveChat(null)}>×</button>
-            </div>
-            <div className="chatbox-body">
-              {(chats[activeChat] || []).map((msg, index) => (
-                <div key={index} className={`chat-msg ${msg.sender === "Me" ? "me" : "other"}`}>
-                  <div className="chat-bubble">
-                    {msg.text}{" "}
-                    {msg.icons && msg.icons.map((icon, idx) => (
-                      <span key={idx} style={{ marginLeft: "4px" }}>{icon}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="chatbox-footer">
-              <input
-                type="text"
-                placeholder="Type a message..."
-                value={chatInput}
-                onChange={(e) => setChatInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSend()}
-              />
-              <button onClick={handleSend}>Send</button>
-            </div>
+
+      {/* Mini-Profile Card - The "Unique" Bottom Section */}
+      <div className="sidebar-profile-card">
+        <div className="profile-info">
+          <div className="profile-avatar">
+            {user?.username?.[0] || <FaUserCircle />}
+          </div>
+          <div className="profile-details">
+            <span className="profile-name">{user?.username || "Guest"}</span>
+            <span className="profile-status">Premium</span>
           </div>
         </div>
-      )}
+        <button className="logout-mini-btn" onClick={handleLogout} title="Logout">
+          <FaSignOutAlt />
+        </button>
+      </div>
     </aside>
   );
 }
+
+

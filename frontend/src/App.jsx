@@ -6,27 +6,29 @@ import PostCard from "./components/PostCard";
 import Rightbar from "./components/Rightbar";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Messages from "./components/Messages";
+import FeatureView from "./components/FeatureView";
 
 import { 
 FaRocket, 
 FaBirthdayCake, 
-FaPaintBrush, 
-FaFire, 
-FaSun, 
-FaHeart, 
-FaGift, 
-FaRegHandPaper, 
-FaUtensils, 
-FaBookOpen, 
-FaWaveSquare, 
-FaPalette,
-FaPlus
+FaPlus,
+FaBell,
+FaCamera,
+FaVideo,
+FaGamepad,
+FaShoppingCart,
+FaSave,
+FaCog
 } from "react-icons/fa";
+
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const [showRegister, setShowRegister] = useState(false);
+  const [view, setView] = useState("feed"); // "feed" or "messages"
+  const [loading, setLoading] = useState(true);
 
   React.useEffect(() => {
     const token = localStorage.getItem("token");
@@ -46,9 +48,22 @@ export default function App() {
       .catch((err) => {
         console.error("Auth me error:", err);
         localStorage.removeItem("token");
-      });
+      })
+      .finally(() => setLoading(false));
+    } else {
+      setLoading(false);
     }
   }, []);
+
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <div className="loader"></div>
+        <p>Vibing into Vibera...</p>
+      </div>
+    );
+  }
+
 
   const handleLogin = (userData) => {
     setUser(userData);
@@ -113,28 +128,61 @@ export default function App() {
   return (
     <div className="app">
       <div className="layout">
-        <Sidebar onLogout={handleLogout} />
-        
-        {/* Main Feed Column */}
-        <main className="feed">
-          <section className="stories-container glass-panel">
-            {stories.map(story => (
-              <div key={story.id} className={`story-item ${story.isUser ? 'user-story' : ''}`}>
-                <div className="story-ring">
-                  <img src={story.img} alt={story.name} />
-                  {story.isUser && <div className="add-story-btn"><FaPlus size={10} /></div>}
-                </div>
-                <span>{story.name}</span>
-              </div>
-            ))}
-          </section>
+        <Sidebar onLogout={handleLogout} setView={setView} activeView={view} user={user} />
 
-          <div className="posts-container">
-            {demoPosts.map((post) => (
-              <PostCard key={post.id} post={post} />
-            ))}
-          </div>
+        
+        {/* Main Content Area */}
+        <main className="feed">
+          {(() => {
+            switch(view) {
+              case "feed":
+                return (
+                  <>
+                    <section className="stories-container glass-panel">
+                      {stories.map(story => (
+                        <div key={story.id} className={`story-item ${story.isUser ? 'user-story' : ''}`}>
+                          <div className="story-ring">
+                            <img src={story.img} alt={story.name} />
+                            {story.isUser && <div className="add-story-btn"><FaPlus size={10} /></div>}
+                          </div>
+                          <span>{story.name}</span>
+                        </div>
+                      ))}
+                    </section>
+                    <div className="posts-container">
+                      {demoPosts.map((post) => (
+                        <PostCard key={post.id} post={post} />
+                      ))}
+                    </div>
+                  </>
+                );
+              case "messages":
+                return <Messages currentUser={user} />;
+              case "notifications":
+                return <FeatureView title="Notifications" icon={FaBell} />;
+              case "photos":
+                return <FeatureView title="Photos" icon={FaCamera} />;
+              case "videos":
+                return <FeatureView title="Videos" icon={FaVideo} />;
+              case "games":
+                return <FeatureView title="Games" icon={FaGamepad} />;
+              case "marketplace":
+                return <FeatureView title="Marketplace" icon={FaShoppingCart} />;
+              case "saved":
+                return <FeatureView title="Saved Posts" icon={FaSave} />;
+              case "settings":
+                return <FeatureView title="Settings" icon={FaCog} />;
+              default:
+                return (
+                  <div className="no-view">
+                    <h2>View Not Found</h2>
+                    <button onClick={() => setView("feed")}>Return Home</button>
+                  </div>
+                );
+            }
+          })()}
         </main>
+
         
         <Rightbar />
       </div>
