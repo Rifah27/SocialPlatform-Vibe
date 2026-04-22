@@ -181,7 +181,7 @@
 .message-bubble.me {
     align-self: flex-end;
     background: var(--gradient-primary);
-    color: white;
+    color: #ffffff;
     border-bottom-right-radius: 4px;
     box-shadow: 0 10px 20px rgba(157, 80, 187, 0.2);
 }
