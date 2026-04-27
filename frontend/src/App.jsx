@@ -7,6 +7,11 @@ import Rightbar from "./components/Rightbar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Messages from "./components/Messages";
+import Profile from "./components/Profile";
+import Notifications from "./components/Notifications";
+import Explore from "./components/Explore";
+import Saved from "./components/Saved";
+import Settings from "./components/Settings";
 import FeatureView from "./components/FeatureView";
 
 import { 
@@ -172,20 +177,21 @@ export default function App() {
 
               case "messages":
                 return <Messages currentUser={user} />;
+              case "profile":
+                return <Profile user={user} />;
               case "notifications":
-                return <FeatureView title="Notifications" icon={FaBell} />;
+                return <Notifications />;
               case "photos":
-                return <FeatureView title="Photos" icon={FaCamera} />;
               case "videos":
-                return <FeatureView title="Videos" icon={FaVideo} />;
+              case "marketplace":
+              case "explore":
+                return <Explore />;
               case "games":
                 return <FeatureView title="Games" icon={FaGamepad} />;
-              case "marketplace":
-                return <FeatureView title="Marketplace" icon={FaShoppingCart} />;
               case "saved":
-                return <FeatureView title="Saved Posts" icon={FaSave} />;
+                return <Saved />;
               case "settings":
-                return <FeatureView title="Settings" icon={FaCog} />;
+                return <Settings user={user} />;
               default:
                 return (
                   <div className="no-view">

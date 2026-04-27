@@ -92,6 +92,11 @@ export default function Sidebar({ onLogout, setView, activeView, user }) {
         <div className="nav-group">
           <span className="group-title">Personal</span>
           <ul className="menu">
+            <li onClick={() => setView("profile")} className={activeView === "profile" ? "active" : ""}>
+              <div className="icon-box"><FaUser className="icon" /></div> 
+              <span>Profile</span>
+              {activeView === "profile" && <div className="active-dot"></div>}
+            </li>
             <li onClick={() => setView("saved")} className={activeView === "saved" ? "active" : ""}>
               <div className="icon-box"><FaSave className="icon" /></div> 
               <span>Saved</span>
@@ -108,7 +113,7 @@ export default function Sidebar({ onLogout, setView, activeView, user }) {
 
 
       {/* Mini-Profile Card - The "Unique" Bottom Section */}
-      <div className="sidebar-profile-card">
+      <div className={`sidebar-profile-card ${activeView === "profile" ? 'active' : ''}`} onClick={() => setView("profile")} style={{ cursor: "pointer" }}>
         <div className="profile-info">
           <div className="profile-avatar">
             {user?.username?.[0] || <FaUserCircle />}
@@ -118,7 +123,7 @@ export default function Sidebar({ onLogout, setView, activeView, user }) {
             <span className="profile-status">Premium</span>
           </div>
         </div>
-        <button className="logout-mini-btn" onClick={handleLogout} title="Logout">
+        <button className="logout-mini-btn" onClick={(e) => { e.stopPropagation(); handleLogout(); }} title="Logout">
           <FaSignOutAlt />
         </button>
       </div>

@@ -174,9 +174,11 @@
   transition: all 0.3s ease;
 }
 
-.sidebar-profile-card:hover {
+.sidebar-profile-card:hover,
+.sidebar-profile-card.active {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(157, 80, 187, 0.2);
 }
 
 .profile-info {
