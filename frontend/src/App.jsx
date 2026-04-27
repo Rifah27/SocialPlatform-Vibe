@@ -12,6 +12,7 @@ import Notifications from "./components/Notifications";
 import Explore from "./components/Explore";
 import Saved from "./components/Saved";
 import Settings from "./components/Settings";
+import CreatePost from "./components/CreatePost";
 import FeatureView from "./components/FeatureView";
 
 import { 
@@ -33,6 +34,7 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [showRegister, setShowRegister] = useState(false);
   const [view, setView] = useState("feed"); // "feed" or "messages"
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   React.useEffect(() => {
@@ -58,7 +60,18 @@ export default function App() {
     } else {
       setLoading(false);
     }
+    fetchPosts();
   }, []);
+
+  const fetchPosts = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/api/posts");
+      const data = await res.json();
+      setPosts(data);
+    } catch (err) {
+      console.error("Fetch posts error:", err);
+    }
+  };
 
   if (loading) {
     return (
@@ -170,11 +183,20 @@ export default function App() {
                       </div>
                     </section>
 
+                    {/* Create Post Area */}
+                    <CreatePost user={user} onPostCreated={(newPost) => setPosts([newPost, ...posts])} />
+
                     {/* Staggered Post Feed */}
                     <div className="posts-masonry-grid">
-                      {demoPosts.map((post) => (
-                        <PostCard key={post.id} post={post} />
-                      ))}
+                      {posts.length > 0 ? (
+                        posts.map((post) => (
+                          <PostCard key={post._id} post={post} currentUser={user} />
+                        ))
+                      ) : (
+                        <div style={{ textAlign: "center", padding: "40px", color: "#64748b" }}>
+                          <p>No posts yet. Be the first to vibe! ✨</p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 );

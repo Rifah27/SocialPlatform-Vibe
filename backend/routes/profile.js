@@ -61,4 +61,22 @@ router.put("/", auth, async (req, res) => {
     }
 });
 
+// @route   GET api/profile/search/:query
+// @desc    Search for users
+// @access  Public
+router.get("/search/:query", async (req, res) => {
+    try {
+        const users = await User.find({
+            $or: [
+                { username: { $regex: req.params.query, $options: "i" } },
+                { email: { $regex: req.params.query, $options: "i" } }
+            ]
+        }).select("username avatar bio");
+        res.json(users);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server Error");
+    }
+});
+
 module.exports = router;
