@@ -31,6 +31,7 @@ app.use("/api", require("./routes/login"));
 app.use("/api", require("./routes/register"));
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/messages", require("./routes/messages"));
+app.use("/api/profile", require("./routes/profile"));
 
 
 // Socket.io Connection Logic

@@ -11,10 +11,20 @@ export default function Settings({ user }) {
   
   // Settings States
   const [profileData, setProfileData] = useState({
-    username: user?.username || "Guest",
-    email: user?.email || "guest@vibera.io",
-    bio: "Digital Creator & Design Enthusiast. Building the future of social media one vibe at a time. ✨"
+    username: user?.username || "",
+    email: user?.email || "",
+    bio: user?.bio || ""
   });
+
+  useEffect(() => {
+    if (user) {
+      setProfileData({
+        username: user.username || "",
+        email: user.email || "",
+        bio: user.bio || ""
+      });
+    }
+  }, [user]);
 
   const [notifications, setNotifications] = useState({
     emailNotif: true,
@@ -32,9 +42,29 @@ export default function Settings({ user }) {
     setTimeout(() => setToast(null), 3000);
   };
 
-  const handleProfileSave = (e) => {
+  const handleProfileSave = async (e) => {
     e.preventDefault();
-    showToast("Profile updated successfully!");
+    const token = localStorage.getItem("token");
+    try {
+      const response = await fetch("http://localhost:5000/api/profile", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(profileData)
+      });
+      const data = await response.json();
+      if (response.ok) {
+        showToast("Profile updated successfully!");
+        if (onUpdateUser) onUpdateUser(data);
+      } else {
+        showToast("Error: " + (data.error || "Failed to update profile"));
+      }
+    } catch (err) {
+      console.error(err);
+      showToast("Server error occurred");
+    }
   };
 
   const handleSecuritySave = (e) => {

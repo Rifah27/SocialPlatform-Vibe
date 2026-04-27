@@ -38,13 +38,13 @@ export default function App() {
   React.useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:5000/api/auth/me", {
+      fetch("http://localhost:5000/api/profile/me", {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => res.json())
       .then(data => {
-        if (data.user) {
-          setUser(data.user);
+        if (data._id) {
+          setUser(data);
           setIsLoggedIn(true);
         } else {
           localStorage.removeItem("token");
@@ -79,6 +79,10 @@ export default function App() {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
     setUser(null);
+  };
+
+  const updateUser = (updatedData) => {
+    setUser(prev => ({ ...prev, ...updatedData }));
   };
 
   const stories = [
@@ -191,7 +195,7 @@ export default function App() {
               case "saved":
                 return <Saved />;
               case "settings":
-                return <Settings user={user} />;
+                return <Settings user={user} onUpdateUser={updateUser} />;
               default:
                 return (
                   <div className="no-view">

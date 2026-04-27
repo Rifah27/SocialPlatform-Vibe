@@ -1,15 +1,18 @@
 import React from "react";
 import "../styles/Pages.css";
 import PostCard from "./PostCard";
-import { FaEdit, FaMapMarkerAlt, FaLink, FaCalendarAlt } from "react-icons/fa";
+import { FaEdit, FaMapMarkerAlt, FaLink, FaCalendarAlt, FaUserCircle } from "react-icons/fa";
 
 export default function Profile({ user }) {
-  // Demo data for posts
+  // Demo data for posts (in a real app, these would also come from backend)
   const userPosts = [
     {
       id: "up1",
-      author: { name: user?.username || "Guest", avatar: "https://i.pravatar.cc/150?u=" + user?.username },
-      content: "Exploring the new Vibera features! This platform is so smooth. 🚀 #Vibera #ModernUI",
+      author: { 
+        name: user?.username || "Guest", 
+        avatar: user?.avatar || "https://i.pravatar.cc/150?u=" + user?.username 
+      },
+      content: user?.bio || "Exploring the new Vibera features! This platform is so smooth. 🚀 #Vibera #ModernUI",
       media: ["https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800"],
       likes: 128,
       shares: 12,
@@ -22,31 +25,44 @@ export default function Profile({ user }) {
     <div className="page-container profile-page">
       <div className="profile-hero glass-panel">
         <img 
-          src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=1200" 
+          src={user?.coverPhoto || "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=1200"} 
           alt="Cover" 
           className="profile-cover" 
         />
         <div className="profile-avatar-wrap">
-          <img 
-            src={"https://i.pravatar.cc/150?u=" + user?.username} 
-            alt="Avatar" 
-            className="profile-avatar-img" 
-          />
+          {user?.avatar ? (
+            <img 
+              src={user.avatar} 
+              alt="Avatar" 
+              className="profile-avatar-img" 
+            />
+          ) : (
+            <div className="profile-avatar-img" style={{ 
+              display: "flex", 
+              alignItems: "center", 
+              justifyContent: "center", 
+              background: "var(--gradient-primary)",
+              color: "white",
+              fontSize: "4rem"
+            }}>
+              {user?.username?.[0]?.toUpperCase() || <FaUserCircle />}
+            </div>
+          )}
         </div>
       </div>
 
       <div className="profile-info-section">
         <div className="profile-stats-bar">
           <div className="stat-item">
-            <span className="stat-value">1.2k</span>
+            <span className="stat-value">{user?.followers?.length || 0}</span>
             <span className="stat-label">Followers</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">450</span>
+            <span className="stat-value">{user?.following?.length || 0}</span>
             <span className="stat-label">Following</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">84</span>
+            <span className="stat-value">1</span>
             <span className="stat-label">Posts</span>
           </div>
           <button className="edit-profile-btn" style={{
@@ -69,13 +85,13 @@ export default function Profile({ user }) {
         <div className="profile-details-box" style={{ marginTop: "32px", padding: "0 20px" }}>
           <h1 style={{ fontSize: "2.5rem", marginBottom: "8px" }}>{user?.username || "Vibera User"}</h1>
           <p style={{ color: "#64748b", fontSize: "1.1rem", maxWidth: "600px", margin: "0 0 20px 0" }}>
-            Digital Creator & Design Enthusiast. Building the future of social media one vibe at a time. ✨
+            {user?.bio || "No bio yet. Add one in settings! ✨"}
           </p>
           
           <div style={{ display: "flex", gap: "24px", color: "#94a3b8", fontSize: "0.9rem" }}>
-            <span style={{ display: "flex", alignItems: "center", gap: "6px" }}><FaMapMarkerAlt /> New York, NY</span>
-            <span style={{ display: "flex", alignItems: "center", gap: "6px" }}><FaLink /> vibera.io</span>
-            <span style={{ display: "flex", alignItems: "center", gap: "6px" }}><FaCalendarAlt /> Joined April 2024</span>
+            <span style={{ display: "flex", alignItems: "center", gap: "6px" }}><FaMapMarkerAlt /> Earth</span>
+            <span style={{ display: "flex", alignItems: "center", gap: "6px" }}><FaLink /> vibera.io/{user?.username}</span>
+            <span style={{ display: "flex", alignItems: "center", gap: "6px" }}><FaCalendarAlt /> Joined Vibera</span>
           </div>
         </div>
       </div>
