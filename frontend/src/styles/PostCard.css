@@ -159,7 +159,7 @@
 
 .glass-tag:hover {
     background: var(--gradient-primary);
-    color: white;
+    color: #ffffff !important;
     transform: translateY(-2px);
 }
 
